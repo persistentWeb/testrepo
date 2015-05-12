@@ -1,0 +1,121 @@
+/* set millions of background images */
+.rbroundboxheader { background: url(../images/nt_soap.gif) repeat; height:auto;}
+.rbtopheader div { background: url(../images/tl_soap.gif) no-repeat top left; }
+.rbtopheader { background: url(../images/tr_soap.gif) no-repeat top right; }
+.rbbotheader div { background: url(../images/bl_soap.gif) no-repeat bottom left; }
+.rbbotheader { background: url(../images/br_soap.gif) no-repeat bottom right; }
+
+/* height and width stuff, width not really nessisary. */
+.rbtopheader div, .rbtopheader, .rbbotheader div, .rbbotheader {
+width: 100%;
+height: 7px;
+font-size: 1px;
+}
+.rbcontentheader {margin: 0 0px; width:100%; height:93.5%; }
+.rbroundboxheader {margin: 0 0px; width:100%; height:93.5%; }
+ 
+/* set millions of background images */
+.rbroundboxallplan { background: url(../images/nt_allplan.gif) repeat; height:auto;}
+.rbtopallplan div { background: url(../images/tl_allplan.gif) no-repeat top left; }
+.rbtopallplan { background: url(../images/tr_allplan.gif) no-repeat top right; }
+.rbbotallplan div { background: url(../images/bl_allplan.gif) no-repeat bottom left; }
+.rbbotallplan { background: url(../images/br_allplan.gif) no-repeat bottom right; }
+
+/* height and width stuff, width not really nessisary. */
+.rbtopallplan div, .rbtopallplan, .rbbotallplan div, .rbbotallplan {
+width: 100%;
+height: 7px;
+font-size: 1px;
+
+}
+.rbcontentallplan {margin: 0 0px; width:100%; height:auto; }
+.rbroundboxallplan {margin: 0 0px; }
+
+/* set millions of Patient images */
+/* set millions of background images */
+.rbroundboxpatient { background: url(../images/nt_patient.gif) repeat; height:auto;}
+.rbtoppatient div { background: url(../images/tl_patient.gif) no-repeat top left; }
+.rbtoppatient { background: url(../images/tr_patient.gif) no-repeat top right; }
+.rbbotpatient div { background: url(../images/bl_patient.gif) no-repeat bottom left; }
+.rbbotpatient { background: url(../images/br_patient.gif) no-repeat bottom right; }
+
+/* height and width stuff, width not really nessisary. */
+.rbtoppatient div, .rbtoppatient, .rbbotpatient div, .rbbotpatient {
+width: 100%;
+height: 7px;
+font-size: 1px;
+
+}
+.rbcontentpatient {margin: 0 0px; width:100%; height:auto; }
+.rbroundboxpatient {margin: 0 0px; }
+
+/* set millions of MasterProblem Images images */
+/* set millions of background images */
+.rbroundboxmp { background: url(../images/nt_mp.gif) repeat; height:auto;}
+.rbtopmp div { background: url(../images/tl_mp.gif) no-repeat top left; }
+.rbtopmp { background: url(../images/tr_mp.gif) no-repeat top right; }
+.rbbotmp div { background: url(../images/bl_mp.gif) no-repeat bottom left; }
+.rbbotmp { background: url(../images/br_mp.gif) no-repeat bottom right; }
+
+/* height and width stuff, width not really nessisary. */
+.rbtopmp div, .rbtopmp, .rbbotmp div, .rbbotmp {
+width: 100%;
+height: 7px;
+font-size: 1px;
+}
+.rbcontentmp {margin: 0 0px; width:100%; height:auto; }
+.rbroundboxmp {margin: 0 0px; }
+
+
+/* set millions of background images */
+.rbroundboxgrey { background: url(../images/nt_grey.gif) repeat; height:auto;}
+.rbtopgrey div { background: url(../images/tl_grey.gif) no-repeat top left; }
+.rbtopgrey { background: url(../images/tr_grey.gif) no-repeat top right; }
+.rbbotgrey div { background: url(../images/bl_grey.gif) no-repeat bottom left; }
+.rbbotgrey { background: url(../images/br_grey.gif) no-repeat bottom right; }
+
+/* height and width stuff, width not really nessisary. */
+.rbtopgrey div, .rbtopgrey, .rbbotgrey div, .rbbotgrey {
+width: 100%;
+height: 7px;
+font-size: 1px;
+
+}
+.rbcontentgrey {margin: 0 0px; width:100%; height:97%; }
+.rbroundboxgrey {margin: 0 0px; width:100%; height:97%; }
+
+/* set millions of background images */
+.rbroundboxeditplanouter { background: url(../images/nt_editplanouter.gif) repeat; height:auto;}
+.rbtopeditplanouter div { background: url(../images/tl_editplanouter.gif) no-repeat top left; }
+.rbtopeditplanouter { background: url(../images/tr_editplanouter.gif) no-repeat top right; }
+.rbboteditplanouter div { background: url(../images/bl_editplanouter.gif) no-repeat bottom left; }
+.rbboteditplanouter { background: url(../images/br_editplanouter.gif) no-repeat bottom right; }
+
+/* height and width stuff, width not really nessisary. */
+.rbtopeditplanouter div, .rbtopeditplanouter, .rbboteditplanouter div, .rbboteditplanouter {
+width: 100%;
+height: 7px;
+font-size: 1px;
+
+}
+.rbcontenteditplanouter {margin: 0 0px; width:100%; height:auto; }
+.rbroundboxeditplanouter {margin: 0 0px; }
+
+
+/* set millions of background images */
+.rbroundboxeditplanwhite { background: url(../images/nt_editplanwhite.gif) repeat; height:auto;}
+.rbtopeditplanwhite div { background: url(../images/tl_editplanwhite.gif) no-repeat top left; }
+.rbtopeditplanwhite { background: url(../images/tr_editplanwhite.gif) no-repeat top right; }
+.rbboteditplanwhite div { background: url(../images/bl_editplanwhite.gif) no-repeat bottom left; }
+.rbboteditplanwhite { background: url(../images/br_editplanwhite.gif) no-repeat bottom right; }
+
+/* height and width stuff, width not really nessisary. */
+.rbtopeditplanwhite div, .rbtopeditplanwhite, .rbboteditplanwhite div, .rbboteditplanwhite {
+width: 100%;
+height: 7px;
+font-size: 1px;
+
+}
+.rbcontenteditplanwhite {margin: 0 0px; width:100%; height:auto; }
+.rbroundboxeditplanwhite {margin: 0 0px; }
+

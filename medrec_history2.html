@@ -1,0 +1,623 @@
+<caravan>
+/*
+//**********Code Document in XML format
+<CodeDocument>
+	<Module>Medical Record</Module>
+	<FileName>medrec_history.html</FileName>
+	<CreatedBy>Parvez Khan</CreatedBy>
+	<ShortDesc>Used for Adding Subjective History Form (against a medical record )</ShortDesc>
+	<FileDescription>Used for Adding Subjective History Form (against a medical record )
+	</FileDescription>
+	<IncludeFiles>
+		<Include>medrec_addxmlhistory.html</Include>
+		<Include>isgroupplanavailable.html</Include>
+		<Include>medrec_editsubjective.html</Include>
+		<Include>medrec_addnewsubjective.html</Include>
+		<Include>inc_clinicwarning.html</Include>
+	</IncludeFiles>
+	<CalledFrom>
+		<File>home_menu.html</File>
+		<File>floatingmenu.html</File>
+	</CalledFrom>
+	<Tables>
+		<TableName>vetport.histform</TableName>
+		<TableName>vetport.histcomments</TableName>
+		<TableName>vetport.hcategories</TableName> 
+	</Tables>
+</CodeDocument>
+created by nititelecom on MAY 13, 2004
+File Name : medrec_history.html 
+Purpose: For adding the history 
+
+*******************************************
+Importnat comment regarding the Oder of the form Components ( questions)
+Currently the the form questions are arragned in ascending fashion based on the Order field value (Only for the Component which has a value greater then 0
+So on the Add and modify page currently we are having two loop ( named as "z" ) one for displaying all the component which has a order value greater then 0 and the second loop for displayeing all the component for which order filed value =0
+
+we can conver the order field into string and for unorder component we can specify a default value as "A" or any other character , so by using a single loop all the ordered component (value >"0") will come first in ascending order and then the unordered component ( This logic is not applied currently
+****************************************************
+
+Display Data Entry for History Forms
+*/
+</caravan>
+<style>
+.leftmenubg
+{
+  width:100%;
+  height:34px;
+  background-image:url("topgrey_2.jpg");
+  background-position: top;
+  background-repeat:repeat-x;
+  float:left;
+  background-color:white;
+  //border:1px solid #ccc;
+  border-radius:10px
+}
+.rightmenubg
+{
+  background-position: top;
+  background-repeat:repeat-x;
+  float:left;
+  background-image:url("topgrey_2.jpg");
+  background-color:white;
+  position:fixed;
+  width:130px;
+  right:10;
+  top:207px;
+  border:1px solid #ccc;
+  border-radius:10px
+}
+</style>
+<caravan>
+domain admin|vpadmin|control|manager|staff
+if (form(calledfromajax)="true" || form(formFlag) = "Save")
+	include "vet_inc_session.html"
+else
+	include header.html
+endif
+if currentvetsession(patientid) > "0"
+	//Continue
+else
+	//redirect "medrec_redirect.html"
+	//**************added for new logic without session
+	var redirectionpath
+	redirectionpath(path)="medrec_redirect.html"
+	include "inc_redirect.html"
+	//************
+endif
+if currentvetsession(pid) > "0"
+	if form(formFlag) = "Save"
+		if (form(EditSubjective))
+			include medrec_editxmlhistory.html
+		else
+			include medrec_addxmlhistory.html
+		endif
+		var filteredby
+		filteredby(val)="history"
+		include "isgroupplanavailable.html"
+
+		//isgroupplanavailable(status) defined in isgroupplanavailable.html
+
+		if isgroupplanavailable(status)="yes"
+			over
+		else
+			var pointer
+			//************** code coomeneted and new code added by Parvez Khan for new session logic
+			//pointer(redirect)= "medrec_problem.html?problemid=" + currentvetsession(pid) + "&fromLab=Yes"
+			if form(workflow)
+				pointer(redirect)= "medrec_objective.html?workflow="+form(workflow)
+			else
+				pointer(redirect)= "medrec_problem.html"
+			endif
+			//redirect pointer(redirect)
+			//**************added for new logic without session
+			var redirectionpath
+			redirectionpath(path)=pointer(redirect)
+		//	include "inc_redirect.html"
+</caravan>
+		<form onsubmit='javascript:doactionpath(this)' name=objectiveredirect action="patient_modify" method="post" enctype="multipart/form-data">
+			<script language="javascript">
+				var path
+				path="<caravan>redirectionpath(path)</caravan>";
+				document.objectiveredirect.action=path;
+				doactionpath(document.objectiveredirect)
+				document.objectiveredirect.submit();
+			</script>
+		</form>
+<caravan>
+			//************
+			over
+		endif
+	elseif form(hidStatus) = "True"
+
+		if form(EditDiscussion)
+			//Edits the currently selected subjective
+			include medrec_editsubjective.html
+		else
+			// Adds new subjective entry to the xml file
+			include medrec_addnewsubjective.html
+		endif
+	endif
+else
+	//redirect "medrec_redirect.html"
+	//**************added for new logic without session
+	var redirectionpath
+	redirectionpath(path)="medrec_redirect.html"
+//	include "inc_redirect.html"
+</caravan>
+		<form onsubmit='javascript:doactionpath(this)' name=objectiveredirect action="patient_modify" method="post" enctype="multipart/form-data">
+			<script language="javascript">
+				var path
+				path="<caravan>redirectionpath(path)</caravan>";
+				document.objectiveredirect.action=path;
+				doactionpath(document.objectiveredirect)
+				document.objectiveredirect.submit();
+			</script>
+		</form>
+<caravan>
+
+	//************
+endif
+</caravan>
+<caravan>
+include "inc_clinicwarning.html"
+</caravan>
+<form onsubmit='javascript:doactionpath(this)' name="frmobj" method="post" action="medrec_history.html" enctype="multipart/form-data" autocomplete="off">
+<!--changes made by satya on 26-dec-14 desc:To display sidebar of all problem list block-->
+    <caravan>
+      //table tabclin=vetport.clinhostype
+      //if tabclin(showproblem_menu)="True"
+    </caravan>
+<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="padding-left:7px;">
+<caravan>
+	if domain <> "client"
+</caravan>
+
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" >
+<tr>
+				<td valign='top' style="padding-top:10px;">
+<caravan>
+				table tabpatstatus=vetport.patients
+				tabpatstatus(recordno)=currentvetsession(patientid)
+				if tabpatstatus(recordno)=currentvetsession(patientid)
+					if tabpatstatus(active)="3"
+						;// do nothing
+						"&nbsp;" 
+					else 
+</caravan>
+						<a href='reminderhistory.html' onclick='javascript:dohrefpath(this)' >
+<caravan>
+							if isvetportinstance(val)="vetport"
+</caravan>
+								Certificates&nbsp;-&nbsp;Boarding, Rabies etc
+<caravan>
+							else
+</caravan>
+								Certificates&nbsp;-&nbsp;Boarding etc
+<caravan>
+							endif ;//if isvetportinstance(val)="vetport"
+</caravan>
+						</a>
+<caravan> 
+					endif
+				endif
+</caravan>
+				</td>
+			</tr>
+                </table>
+		  <table border="0" width="100%"  cellpadding="5" cellspacing="0" class="leftmenubg" style="padding:5px; margin-top:10px;">
+			<tr>
+				<td colspan="3" height="34" style="padding-top:2px" nowrap><h5 class="toplevelmenulink" style="margin:0px;">Problem List</h5></td>
+			</tr>
+			<!--<tr><td style = "padding-top : 0px; padding-bottom : 0px" colspan = "5"><hr></td></tr>-->
+<caravan> 
+			table tabnewmplist=vetport.masterproblem
+			var sql
+			sql(query)="patient="+currentvetsession(patientid)+" and isdeleted<>true"
+			select from tabnewmplist where {query} order by lastmodified  desc
+
+			loop nmloop (tabnewmplist(selected))
+</caravan>
+				<tr id="trfornewmpdel_<caravan>tabnewmplist(recordno)</caravan>">
+					<td nowrap id="tdfornewmpdel_<caravan>tabnewmplist(recordno)</caravan>" style="padding-top:5px;padding-bottom:5px;">
+<caravan>
+					if tabnewmplist(isdeleted)="True"
+					else
+</caravan>
+<a href="javascript:dodelnewmp('<caravan>tabnewmplist(recordno)</caravan>')" style="color:#0A2566"><img src="images/trash.png" height="14px"></a>
+<caravan>
+					endif	
+</caravan>
+					</td>
+                        <td nowrap style="padding-left:4px;padding-right:4px;color:#0A2566; padding-top:5px;padding-bottom:5px;"id="tdfornewmpsoap_<caravan>tabnewmplist(recordno)</caravan>">
+<caravan>
+					if tabnewmplist(isdeleted)="True"
+					else
+</caravan>
+					<a href="medrec_notesforsoap.html?newmpid=<caravan>tabnewmplist(recordno)</caravan>" onclick='javascript:dohrefpath(this)' style="color:#0A2566">SOAP</a>
+<caravan>
+					endif ;//if tabnewmplist(isdeleted)="True"
+</caravan>
+					</td>
+					<td id="tdfornewmpname_<caravan>tabnewmplist(recordno)</caravan>" style="color:#0A2566;padding-top:5px;padding-bottom:5px;padding-left:2px;padding-right:2px;">
+<caravan>
+					if tabnewmplist(isdeleted)="True"
+						"<strike>";tabnewmplist(masterproblem);"</strike>";
+					else
+</caravan>
+					<caravan>tabnewmplist(masterproblem)</caravan>
+<caravan>
+					endif ;//if tabnewmplist(isdeleted)="True"
+</caravan>
+					</td>
+
+					<td style="color:#0A2566;padding-left:2px;padding-right:2px;" id="tdforfollowup_<caravan>tabnewmplist(recordno)</caravan>">
+<caravan>
+					if tabnewmplist(isdeleted)="True"
+						"&nbsp;"
+					else
+						;// code for followup
+						table tabflaggedmp=vetport.flaggedmp 
+						var sql
+						sql(query)="masterproblemid="+tabnewmplist(recordno)+" and followupstatus=on"
+
+						select from tabflaggedmp where {query}
+						if currentclinic(referralclinic)="yes"
+							if tabflaggedmp(selected)>"0"
+								"<b><font color='green'>On</font></b></a>"
+							else ;//if tabflaggedmp(selected)>"0"
+								"<b><font color='red'>Off</font></b></a>"
+							endif ;//if tabflaggedmp(selected)>"0"
+						else ;//if currentclinic(referralclinic)="yes"
+							if tabflaggedmp(selected)>"0"
+</caravan>	
+								<span id="followupspan_<caravan>tabnewmplist(recordno)</caravan>"><a href="#" onclick="javascript:dofollowup('<caravan>currentvetsession(pid)</caravan>','on','<caravan>tabnewmplist(recordno)</caravan>')"><b><font color="green">On</font></b></a></span>
+<caravan>
+							else ;//if tabflaggedmp(selected)>"0"
+</caravan>
+								<span id="followupspan_<caravan>tabnewmplist(recordno)</caravan>"><a href="#" onclick="javascript:dofollowup('<caravan>currentvetsession(pid)</caravan>','off','<caravan>tabnewmplist(recordno)</caravan>')"><b><font color="red">Off</font></b></a></span>
+<caravan>
+							endif ;//if tabflaggedmp(selected)>"0"
+						endif ;//if currentclinic(referralclinic)="yes"
+					endif ;//if tabnewmplist(isdeleted)="True"
+</caravan>
+					</td>
+					<td id="tdfornewmpstatus_<caravan>tabnewmplist(recordno)</caravan>" style="padding-top:5px;padding-bottom:5px;width:60px;" nowrap>&nbsp;
+<caravan>
+					if tabnewmplist(isdeleted)="True"
+					else
+						if tabnewmplist(status)="resolved"
+</caravan>
+							<a href="javascript:doopennewmp('<caravan>tabnewmplist(recordno)</caravan>')" >Resolved</a>
+<caravan>
+						else
+</caravan>
+							<a href="javascript:doclosenewmp('<caravan>tabnewmplist(recordno)</caravan>')" >Open</a>
+<caravan>	
+						endif
+					endif
+</caravan>
+					</td>
+				</tr>
+<caravan>
+				tabnewmplist(nextrecord)
+			repeat nmloop
+</caravan>
+		
+		</table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" >
+<caravan>
+			var showreminders
+			//********** code for checking if reminder needs to be shown
+			table tabpatstatus=vetport.patients
+
+			tabpatstatus(recordno)=currentvetsession(patientid)
+
+			if tabpatstatus(recordno)=currentvetsession(patientid)
+				if tabpatstatus(active)="3"
+					showreminders(val)="False"
+				else
+					showreminders(val)="True"
+				endif
+			else
+				showreminders(val)="True"
+			endif
+			if showreminders(val)="True"
+				//************ code for reminder
+				//************ Code added Parvez Khan as on 29-dec-2006
+				var calledfrommedicalrecord
+				calledfrommedicalrecord(calledforcolumnlayout)="true"
+				calledfrommedicalrecord(showmpreminder)="true"
+				calledfrommedicalrecord(showallreminder)="true"
+</caravan>
+				<tr valign='top'>
+					<td  width="100%" class="planbrown"><caravan>include "inc_client_reminder.html"</caravan></td>
+				</tr>
+
+<caravan>
+
+			endif ;//if showreminders(val)="True"
+</caravan> 
+		</table> 
+      
+<caravan>
+	endif ;//if domain <> "client"
+</caravan>
+		<!--------------------------------> 
+		
+		<!-- Appointments for Patient-->
+		<!-------------------------------->
+		<table border="0" cellpadding="5" cellspacing="0" width="100%" class="leftmenubg" style=" border-radius:10px; padding:5px; margin-top:10px;">
+			<tr>
+				<td valign='middle' height="34">
+					<!--<h5 class="headingh5">Today's & Future Appointments</h5>-->
+                    <h5 class="toplevelmenulink" style="margin:0px;">Appointments</h5>
+				</td>
+			</tr>
+			<!--<tr><td style = "padding-top : 0px; padding-bottom : 0px" colspan = "5"><hr></td></tr>-->
+			<tr>
+				<td>
+<caravan>
+				time tnow
+				tnow(hour)="0"
+				tnow(minute)="0"
+				tnow(second)="0"
+				table tabappointments=vetport.appointment
+				var sql
+				sql(query)="patient="+currentvetsession(patientid)+" and patientStatus<>cancel"
+				sql(sqtime)="stime>"+tnow(time)
+				select from tabappointments where {query}
+				select from tabappointments where {sqtime}
+				if tabappointments(selected)>"0"
+					select from tabappointments order by stime
+					loop apploop (tabappointments(selected))
+						
+						time tappstime
+						tappstime(time)=tabappointments(stime)
+						tappstime(month);", ";tappstime(date);" ";tappstime(year);" ";tappstime(hour);":";tappstime(minute);" - ";tabappointments(complaint.complaints);" (";tabappointments(taskid.type);")"
+						"<br>"
+						tabappointments(nextrecord)
+					repeat apploop
+				else
+					//"No Appointments"
+				endif
+</caravan>
+				</td>
+			</tr>
+		</table>
+		<!-------------------------------->
+	</div>
+	<div class="col-sm-9 " style="padding-left:7px;">
+    <caravan>  
+    //else  
+    //endif
+    </caravan>
+    <!--changes made by satya end-->
+<caravan>
+if form(workflow)
+</caravan>
+<!-- changes made by satya on 30-dec-14 -->
+<table border="0" width="100%" valign="top" cellspacing="0" cellpadding="2" class="workflownavigationbar">
+<!--changes made by satya -->
+<tr>
+<caravan>
+	include "workflow_steps.html"
+
+	;// code for skip button
+
+			if currentvetsession(pid)
+				;// code for skip button
+				if form(workflow)="soappatient"
+</caravan>
+					<td align="left" nowrap width="99%">&nbsp;
+						 <img src="/images/icons/button_back.gif" onclick="javascript:workflow_nextstep('medrec_subjective.html?workflow=<caravan>form(workflow)</caravan>')">
+						<img src="/images/icons/button_vertical_pipe.gif">
+						 <img src="/images/icons/button_skip.gif" onclick="javascript:workflow_nextstep('medrec_objective.html?workflow=<caravan>form(workflow)</caravan>')">
+					</td>
+<caravan>
+				endif
+			endif	
+</caravan>
+		</tr>
+	</table>
+<caravan>
+else
+</caravan>
+	<table width="100%">
+		<tr>
+			<td align='left' nowrap class="MenuTitle" width="10%">History Forms</td>
+		</tr>
+	</table>
+<caravan>
+endif
+</caravan>
+<!--changes made by satya on 26/dec/14-->
+<caravan> 
+  			//include "inc_client_reminder.html"
+</caravan>
+<!--changes made by satya end-->
+<!--changes made by satya on 30/dec/14-->
+  <table border="0" cellspacing="1" width="100%" style="border:2px #E5E2B5;">
+    <tr><td>
+    <table width="100%" border="0">
+<!--changes made by satya end-->
+<tr>
+	<td width="100%" colspan="3" height="5px" nowrap></td>
+</tr>
+<input type="hidden" name="hidajaxpostingdone" value="">
+<input type="hidden" name="EditSubjective" value="">
+<input type="hidden" name="formFlag" value="1">
+<input type="hidden" name="hidList" value="">
+<input type="hidden" name="hidindicatornames" value="">   
+<input type="hidden" name="workflow" value="<caravan>form(workflow)</caravan>">
+<tr height="30px">
+	<td width="100%" class="infoheading" colspan="3" height="18" nowrap>History Form &nbsp;
+	<select name="listForm" onChange="histdoSubmit(this)">
+<caravan>
+	delete tabForm
+	table tabForm = vetport.histform
+	delete sql
+	var sql
+	sql(species) = currentvetsession(speciesid)
+
+	select from tabForm where species={species} order by FormName
+	delete currentForm
+	var currentForm
+	loop ctr (tabForm(selected))
+		if form(formFlag)
+			if tabForm(Recordno) = form(listForm)
+				"<option selected value='" ;tabForm(recordno) ;"'>" ;tabForm(FormName) ;"</option>"
+				currentForm(id(01)) = tabForm(recordno)
+				currentForm(Name(01)) = tabForm(FormName)
+			else
+				"<option value='" ;tabForm(recordno) ;"'>" ;tabForm(FormName) ;"</option>"
+			endif
+		else
+			if tabForm(Default) = "True"
+				"<option selected value='" ;tabForm(recordno) ;"'>" ;tabForm(FormName) ;"</option>"
+				currentForm(id(01)) = tabForm(recordno)
+				currentForm(Name(01)) = tabForm(FormName)
+			elseif ctr(count) = "01"
+				"<option selected value='" ;tabForm(recordno) ;"'>" ;tabForm(FormName) ;"</option>"
+				currentForm(id(01)) = tabForm(recordno)
+				currentForm(Name(01)) = tabForm(FormName)
+			else
+				"<option value='" ;tabForm(recordno) ;"'>" ;tabForm(FormName) ;"</option>"
+			endif
+		endif
+		tabForm(nextrecord)
+	repeat ctr
+</caravan>
+	</select> 
+	&nbsp;&nbsp;<input class="coloredbutton" type="button" NAME="cmdSave" value="Save" onClick="histdoSubmit(this)">
+	</td>
+</tr>
+<caravan>
+
+
+var tmpctr
+var varObjective
+delete sql
+var sql
+sql(spid)=currentvetsession(speciesid)
+sql(frmid) = currentform(id)
+tmpctr(val)="0"
+table obj=vetport.hcategories
+
+if sql(frmid)
+	select from obj where FormName = {frmid} order by order
+endif
+
+select from obj where active="Active"
+select from obj where order > "0"
+
+loop z (obj(selected))
+	delete tmpVar
+	var tmpVar
+	tmpVar(val) = "0"
+	tmpVar(temp) = "0"
+	tmpVar(temp(01))+= z(count)
+	tmpVar(temp(01))%="2"
+	tmpVar(class)=""
+	if tmpVar(temp) = "1"
+		tmpVar(class(01)) +="alternateRow1"
+	else
+		tmpVar(class(01))+="alternateRow2"
+	endif
+	var sql
+	sql(rno)=obj(recordno)
+	varObjective(Objective(01)) += obj(subjective)
+	if z(counter) <> obj(selected)
+		varObjective(Objective(01))+= "^"
+	endif
+</caravan>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class='<caravan>tmpVar(class)</caravan>'>
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap> <b><caravan>obj(subjective)</caravan></b></td>
+        <!--changes made by satya end-->
+		<td nowrap width="5%">
+<caravan>
+		var indctr
+		indctr(val)="0"
+		loop ctr (obj(extraradios(00)))
+</caravan>
+			<input type="radio" NAME="<caravan>"Ex";tmpctr(val)</caravan>" value=" <caravan>obj(extraradios(ctr(count)))</caravan>" onClick=histCopyExRadios(<caravan>indctr(val)</caravan>,<caravan>tmpctr(val)</caravan>)><caravan>obj(extraradios(ctr(count)))</caravan>
+<caravan>
+			indctr(val)+="1"
+		repeat ctr
+		if indctr(val) = "0"
+			indctr(val)="5"
+		endif
+</caravan>
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" NAME="C<caravan>tmpctr(val)</caravan>" value="Direct">
+<caravan>
+		table comment=vetport.histcomments
+		select from comment where subjective={rno} order by comment
+
+		if comment(selected)>"0"
+</caravan>
+			<SELECT NAME="listcomment<caravan>tmpctr(val)</caravan>" onChange="histCopyText(this,<caravan>tmpctr(val)</caravan>,<caravan>obj(recordno)</caravan>,<caravan>indctr(val)</caravan>)">
+			<option value="-99"> --Choose One--</option>
+<caravan>
+			loop ctr (comment(selected))
+</caravan>
+				<option  value="<caravan>comment(recordno)</caravan>"><caravan>comment(comment)</caravan></option>
+<caravan>
+				comment(nextrecord)
+			repeat ctr
+</caravan>
+			</SELECT>
+<caravan>
+		endif
+</caravan>
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class='<caravan>tmpVar(class)</caravan>'>
+		<td colspan="3" nowrap valign='top'> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td width="1%" valign="top" nowrap>Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment<caravan>tmpctr(val)</caravan>"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,<caravan>tmpctr(val)</caravan>)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment<caravan>tmpctr(val)</caravan>" onblur="javascript:histcheckradio(this,<caravan>tmpctr(val)</caravan>)" onkeyPress="return dovalidatesymbolmain(this,event)" cols="100" rows="3"></textarea></td>
+			</tr>
+		</table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+<caravan>
+	obj(nextrecord)
+	tmpctr(val)+="1"
+repeat z
+//sql(cnt)
+//varObjective(persistent) = "True"
+</caravan>
+<span id="sphisquestion" style="display:none">
+	<textarea name="txthisquestion"><caravan>varObjective(Objective)</caravan></textarea>
+</span>
+<tr height="30px">
+	<td width="100%" class="infoheading" colspan="3" height="18" nowrap align=center>
+	<input class="coloredbutton" type="button" NAME="cmdSave1" value="Save" onClick="histdoSubmit(this)">
+	</td>
+</tr>
+</table>
+</td></tr>
+</table>
+<!--changes made by satya on 23-dec-14-->
+</div>
+<!--changes end by satya-->                                                                                                                   
+</form>
+<caravan>
+if form(calledfromajax)="true"
+else
+	include footer.html
+endif
+</caravan>

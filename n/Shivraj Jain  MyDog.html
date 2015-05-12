@@ -1,0 +1,2373 @@
+
+<!-- saved from url=(0110)https://develop.vetport.com/medrec_history2.html?workflow=soappatient&clientid=1236&patientid=86&problemid=127 -->
+<html width="100%" height="100%"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>
+.leftmenubg
+{
+  width:100%;
+  height:34px;
+  background-image:url("topgrey_2.jpg");
+  background-position: top;
+  background-repeat:repeat-x;
+  float:left;
+  background-color:white;
+  //border:1px solid #ccc;
+  border-radius:10px
+}
+.rightmenubg
+{
+  background-position: top;
+  background-repeat:repeat-x;
+  float:left;
+  background-image:url("topgrey_2.jpg");
+  background-color:white;
+  position:fixed;
+  width:130px;
+  right:10;
+  top:207px;
+  border:1px solid #ccc;
+  border-radius:10px
+}
+</style>
+
+
+<style>
+INPUT {
+color: black;
+font-family: arial, verdana, ms sans serif;
+font-size: 24pt;
+}
+
+a[href]:after { display:none;}
+
+
+@media print
+  {
+	 .hideonprint {display:none;}
+  }
+</style>
+	<script language="javascript">
+	function search_clientpatient_onclick()
+	{
+		var path="search_client_patient.html?cmdsearchpatient=true&calledfromtopsearch=true&workflow=soappatient"
+
+		var varhidsearchpage=document.getElementsByName("hidsearchpage")
+		var vartxtsearch=document.getElementsByName("txtsearch")
+		var varhidallowstarsearch=document.getElementsByName("hidallowstarsearch")
+			
+		path+="&txtsearch="+vartxtsearch[0].value
+
+		if (varhidsearchpage[0].value=="/search_client_patient.html")
+		{
+			if (document.frmGeneral.selclinic)
+			{
+				path=path+"&selclinic="+document.frmGeneral.selclinic.value
+			}
+		}
+		if (vartxtsearch[0].value=="*") 
+		{
+			if (varhidallowstarsearch)
+			{
+				//********* allow 
+				path=doopenwindowpath(path)
+				document.location=path
+			}
+			else
+			{
+				alert("Please type a search criterion, * is not a valid search criterion");
+				vartxtsearch[0].focus();
+			}
+		}
+		else
+		{
+			if (vartxtsearch[0].value!="")
+			{
+				path=doopenwindowpath(path)
+				document.location=path
+			}
+			else
+			{
+				alert("Please type a search criterion");
+			}
+		}
+	}
+	function search_clientpatient_mainmenu(myfield,e)
+	{
+		var keycode;
+		if (window.event) keycode = window.event.keyCode;
+		else if (e) keycode = e.which;
+		else return true;
+	
+		if (keycode == 13)
+		{
+			var path="search_client_patient.html?cmdsearchpatient=true&calledfromtopsearch=true&workflow=soappatient"
+
+			var varhidsearchpage=document.getElementsByName("hidsearchpage")
+			var vartxtsearch=document.getElementsByName("txtsearch")
+			var varhidallowstarsearch=document.getElementsByName("hidallowstarsearch")
+			
+			path+="&txtsearch="+encodeURIComponent(vartxtsearch[0].value)
+
+			if (varhidsearchpage[0].value=="/search_client_patient.html")
+			{
+				if (document.frmGeneral.selclinic)
+				{
+					path=path+"&selclinic="+document.frmGeneral.selclinic.value
+				}
+			}
+
+			if (vartxtsearch[0].value=="*")
+			{
+				if (varhidallowstarsearch)
+				{
+					//********* allow 
+					path=doopenwindowpath(path)
+					document.location=path
+				}
+				else
+				{
+					alert("Please type a search criterion, * is not a valid search criterion");
+					vartxtsearch[0].focus();
+				}
+			}
+			else
+			{
+				if (vartxtsearch[0].value!="")
+				{
+					
+					path=doopenwindowpath(path)
+					document.location=path
+
+				}
+				else
+				{
+					alert("Please type a search criterion");
+				}
+			}
+			return false;
+		}
+		return true;
+	}
+	</script>
+	<link rel="shorcut icon" href="https://develop.vetport.com/favicon.ico">
+	<!---- js and css file for bootstrap-->
+				<!-- Bootstrap --> 
+		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			
+			<link href="./Shivraj Jain  MyDog_files/bootstrap.css" rel="stylesheet" type="text/css">
+			
+			<link href="./Shivraj Jain  MyDog_files/navbar-fixed-top.css" rel="stylesheet" type="text/css">
+			<link href="./Shivraj Jain  MyDog_files/vetport.css" rel="stylesheet" type="text/css">
+			<link href="./Shivraj Jain  MyDog_files/tablewrap.css" rel="stylesheet" type="text/css">
+			
+			<link href="./Shivraj Jain  MyDog_files/table_flip.css" rel="stylesheet" type="text/css">
+			
+			<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+			<script type="text/javascript" src="./Shivraj Jain  MyDog_files/jquery_1.10.js"></script>
+			<!-- Include all compiled plugins (below), or include individual files as needed -->
+			<script type="text/javascript" src="./Shivraj Jain  MyDog_files/bootstrap.min.js"></script>
+
+
+			<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+			<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+			<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+			<![endif]-->
+	<!------------------------------------------------>
+	<link rel="stylesheet" type="text/css" href="./Shivraj Jain  MyDog_files/vetport_newlayout.css">
+
+	<link rel="stylesheet" type="text/css" href="./Shivraj Jain  MyDog_files/roundercorner.css">
+	
+	<!-- these 3 js can be removed, once new layout is deployed, need some testing-->
+	<!--<script type="text/javascript" src=""></script>js/dhtml/js/dhtml-suite-for-applications.js-->
+
+	<script type="text/javascript" src="./Shivraj Jain  MyDog_files/dropdown.js"></script>
+	<link rel="stylesheet" href="./Shivraj Jain  MyDog_files/dropdown.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="./Shivraj Jain  MyDog_files/topmenu.css">
+	<!------------->
+	<!-- need to find out use, of modal window and where it is used-->
+	<link rel="stylesheet" href="./Shivraj Jain  MyDog_files/modal.css" type="text/css">
+	<link rel="stylesheet" href="./Shivraj Jain  MyDog_files/dhtmlwindow.css" type="text/css">
+	<script type="text/javascript" src="./Shivraj Jain  MyDog_files/dhtmlwindow.js"></script><style>.cke{visibility:hidden;}</style></head><body topmargin="0" leftmargin="0" style="font-weight: normal; font-size: 10px; color: rgb(0, 0, 0); font-family: Arial, Helvetica, sans-serif; background-color: rgb(255, 255, 255);" marginwidth="00" marginheight="00" onclick="javascript:doclosemenu()" width="100%" height="100%"><div id="dhtmlwindowholder"><span style="display:none">.</span></div>
+	<script type="text/javascript" src="./Shivraj Jain  MyDog_files/modal.js"></script><div id="interVeil"></div>
+	<!------------------------------------------------------------------->
+
+	
+
+	<!--
+	<link rel="stylesheet" type="text/css" media="all" href="" title="Calendar StyleSheet">cal.css
+	<script type="text/javascript" src=""></script>calendar.js
+	<script type="text/javascript" src=""></script>calendar-en.js
+	<script type="text/javascript" src=""></script>calendar-setup.js
+	-->
+<!-- rtf editor, need to dind out if this is been used somewhere js/rtf/whizzywig.js has been moved to medrec_editplan.html page and already available on other pages [mostly in popup pages]--->
+
+	<script src="./Shivraj Jain  MyDog_files/ckeditor.js"></script>
+<!-- rtf editor--->
+		<link rel="stylesheet" type="text/css" media="screen, print, projection" href="./Shivraj Jain  MyDog_files/vetstyle.css">
+	
+	<meta name="DESCRIPTION" content="Welcome to our web site! VETport Veterinary Hospital is committed to providing state-of-the-art veterinary care at an affordable cost."> 
+	<meta name="KEYWORDS" content="veterinarian, animal hospital, Springboro, Franklin, Waynesville, Centerville, Washington Township, training, Dayton, Ohio, Lebanon, DVM, pets, dog, cat, house training, obedience training, dog shots, puppy, kitten, animals, spay, neuter, dog grooming, pet boarding, groomer, puppy, kitten, health care, preventive care, pet facts, first aid">
+	<meta http-equiv="Content-Type" content="text/html;">
+	<meta name="ROBOTS" content="INDEX,FOLLOW">
+		<script type="text/javascript" src="./Shivraj Jain  MyDog_files/jquery-1.4.3.min.js"></script>
+		<script type="text/javascript" src="./Shivraj Jain  MyDog_files/jquery.fixedtableheader.min.js"></script>
+
+	<!----------------jquery ui----------------------------------->
+	<!-- to be removed after testing properly, since Calender, dilog function was used in many places-->
+	<link rel="stylesheet" href="https://develop.vetport.com/js/jqueryui/development-bundle/themes/redmond/jquery.ui.all.css">
+	<link rel="stylesheet" href="https://develop.vetport.com/js/jqueryui/development-bundle/demos/demos.css">
+	<script src="./Shivraj Jain  MyDog_files/jquery.ui.core.js"></script>
+	<script src="./Shivraj Jain  MyDog_files/jquery.ui.widget.js"></script>
+	<script src="./Shivraj Jain  MyDog_files/jquery.ui.mouse.js"></script>
+	<!-- selectable in used in Popup page used for saving complaints into medical record File name mpselection.html -->
+	<script src="./Shivraj Jain  MyDog_files/jquery.ui.selectable.js"></script>
+
+	<script src="./Shivraj Jain  MyDog_files/jquery.ui.dialog.js"></script>
+	<script src="./Shivraj Jain  MyDog_files/jquery.ui.datepicker.js"></script>
+	<!--<script ></script>src="js/jqueryui/development-bundle/ui/jquery.ui.accordion.js"-->
+	<!--<script src=""></script>js/jqueryui/development-bundle/ui/jquery.ui.button.js-->
+	<!--<script src=""></script>js/jqueryui/development-bundle/ui/jquery.ui.draggable.js-->
+	<!--<script src=""></script>js/jqueryui/development-bundle/ui/jquery.ui.position.js-->
+	<!--<script src=""></script>js/jqueryui/development-bundle/ui/jquery.ui.resizable.js-->
+	<!------------------------------------------------------------------------->
+
+	<script src="./Shivraj Jain  MyDog_files/headerjavascript.js"></script>
+
+
+<script language="javascript">
+
+//function to strip and remove html tags
+function strip(html)
+{
+
+	//alert($(html).html())
+   var tmp = document.createElement("DIV");
+   tmp.innerHTML = html;
+   return tmp.textContent||tmp.innerText;
+}
+
+;// code to validate textbox for html tags
+$(function(){
+	//$("input:text,textarea").blur(function(){
+	$("input:text").blur(function(){
+
+	  ;// code to check if text box contains any htmltag
+
+	  var str=this.value
+	  if (str!="")
+	  {
+		if(str.match(/([\<])([^\>]{1,})*([\>])/i)==null)
+		{
+			;// valid content
+			var str = str.replace(/\"/g, '');
+			this.value=str
+		}
+        else
+		{
+			//alert("HTML Tags not allowed, they will be removed");
+
+			var str = str.replace(/\<>/g, '');
+			if (str!="")
+			{ 
+				var str = str.replace(/\"/g, '');
+
+			}
+
+			str=strip(str)	
+			
+			if (str)
+			{
+
+				if (str!="")
+				{
+					this.value=str
+				}
+				else
+				{
+					this.value=""
+				}
+			}
+			else
+			{
+				this.value=""
+			}
+			//this.focus() 
+			//return false
+		}
+
+	  }
+	});
+})
+function syncTextareaforck()
+{
+	var myinstances = [];
+
+	//this is the foreach loop
+	for(var i in CKEDITOR.instances) {
+
+	   /* this  returns each instance as object try it with alert(CKEDITOR.instances[i]) */
+		CKEDITOR.instances[i]; 
+	   
+		/* this returns the names of the textareas/id of the instances. */
+		CKEDITOR.instances[i].name;
+
+		/* returns the initial value of the textarea */
+		CKEDITOR.instances[i].value;  
+	 
+	   /* this updates the value of the textarea from the CK instances.. */
+	   CKEDITOR.instances[i].updateElement();
+
+	   /* this retrieve the data of each instances and store it into an associative array with
+		   the names of the textareas as keys... */
+	   myinstances[CKEDITOR.instances[i].name] = CKEDITOR.instances[i].getData(); 
+	}
+}
+</script>
+
+	<style>
+	#tooltip {  
+		position:absolute;  
+	    z-index:2000;  
+		color:#000000;  
+	    font-size:12px;  
+		font-weight:bold;
+		background-color:#FFFFE8;
+		border:2px solid #C24641;
+		-moz-border-radius:2;
+		-webkit-border-radius:3px;	
+	}  
+  
+	#tooltip .tipHeader {  
+	   height:0px;  
+	}  
+  
+	/* IE hack */  
+	*html #tooltip .tipHeader {margin-bottom:-6px;}  
+  
+	#tooltip .tipBody {  
+		background-color:#FFFFE8;
+	    padding:5px;  
+	}  
+  
+	#tooltip .tipFooter {  
+		height:0px;  
+	}  
+</style>
+
+	
+
+	
+	
+	<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%" bgcolor="#333333">
+		<tbody><tr>
+			<td valign="top" width="1%" style="background-color:#333333;"><a name="#topsection" style="padding:0px 0px 0px 0px;background-color: inherit;"><img src="./Shivraj Jain  MyDog_files/firsttd.jpg" border="0" width="10px"></a></td>
+
+			<td valign="top" width="1%" bgcolor="#ffffff">&nbsp;</td>
+			<td valign="top" width="98%">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%" bgcolor="#ffffff" style="-moz-border-radius-bottomright:10px;-moz-border-radius-bottomleft:10px;-webkit-border-bottom-right-radius:10px;-webkit-border-bottom-left-radius:10px;">
+					<tbody><tr>
+						<td valign="top" width="2px"><img src="./Shivraj Jain  MyDog_files/secondtd.jpg" border="0" width="2px"></td>
+						<td valign="top" width="99%" id="maincontenttd">
+							<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%" align="center" bgcolor="#ffffff"><!--id="scrollableheader"-->
+								<tbody><tr height="1%">
+									<td valign="top">
+										<div id="clientinfodet">
+											<table border="0" cellpadding="0" cellspacing="0" width="100%">
+												<tbody><tr>
+													<td width="100%" valign="top" align="center">
+   <script language="javascript">
+var targetpath=""
+function doopenwindowpath(a)
+{
+	targetpath=a  
+	dotargetpathunload()
+	return targetpath
+}
+function doactionpath(a)
+{
+	//**************** code for checking if there are any submit button on the form
+	targetpath=a.action
+	dotargetpathunload()
+	a.action=targetpath 
+} 
+
+function dohrefpath(a)
+{
+	targetpath=a.href
+
+	dotargetpathunload()
+	a.href=targetpath
+}
+function dotargetpathunload()
+{
+
+	var client=""
+	var patient=""
+	var masterprob=""
+	if (targetpath!="")
+	{
+		var i
+		client="false"
+		patient="false"
+		masterprob="false"
+		//*********** code for checking
+		var varparameter =targetpath.split("?")
+		if (varparameter.length>1)
+		{
+			//********** if (varparameter.length>1) means that some parameter
+			var subparameter
+			subparameter=varparameter[1].split("&")
+
+			for(i=0;i<subparameter.length;i++)
+			{
+				var actualparameter
+				actualparameter=subparameter[i].split("=")
+				if (actualparameter.length>1)
+				{
+					var lcaseparameter=actualparameter[0].toLowerCase();
+					if (lcaseparameter=="clientid")
+					{
+						client="true"
+					}
+					if (lcaseparameter=="patientid")
+					{
+						patient="true"
+					}
+					if (lcaseparameter=="problemid")
+					{
+						masterprob="true"
+					}
+				}
+
+			}
+		}
+	}
+	if (client=="true" || patient=="true" || masterprob=="true")
+	{
+		// donothing
+	}
+	else
+	{
+
+		//var path
+		if (varparameter.length>1)
+		{
+			var cid;
+          	cid=document.getElementById('clientid').value;
+          var paid;
+          	paid=document.getElementById('patientid').value;
+          var pid;
+          	pid=document.getElementById('problemid').value;
+          targetpath=targetpath+"&clientid="+cid+"&patientid="+paid+"&problemid="+pid;
+         
+          //targetpath=targetpath+"&clientid=&patientid=&problemid=";
+		}
+		else
+		{
+          var cid;
+          	cid=document.getElementById('clientid').value;
+          var paid;
+          	paid=document.getElementById('patientid').value;
+          var pid;
+          	pid=document.getElementById('problemid').value;
+			targetpath=targetpath+"?clientid="+cid+"&patientid="+paid+"&problemid="+pid;
+		}
+	}
+}
+</script>
+<span id="vetincsession" style="display:none;">
+<form name="frmsession" method="post">
+<input type="hidden" id="clientid" name="clientid" value="1236">
+<input type="hidden" name="patientid" id="patientid" value="86">
+<input type="hidden" name="problemid" id="problemid" value="127">
+
+</form>
+</span>
+<title>
+Shivraj Jain&gt;&gt;MyDog</title>
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr>
+			<td align="center"><script language="javascript">
+  
+function dopopupfochatnew(path)
+{
+	//window.open("supportchat.html","_blank","width=450px,height=550px,top=10px,left=10px,toolbar=no,location=no,directories=no,menubar=no")
+	var mywin=window.open(path,"","width=400, height=500,location=0,menubar=0,resizable=1,scrollbars=0,status=0,titlebar=0,toolbar=0")
+}
+function settingsandhelpmenu()
+{
+	var winW = 200;
+	if (document.body && document.body.offsetWidth) 
+	{
+		winW = document.body.offsetWidth;
+	}
+	if (document.compatMode=='CSS1Compat' &&    document.documentElement &&    document.documentElement.offsetWidth ) 
+	{
+		winW = document.documentElement.offsetWidth;
+	}
+	if (window.innerWidth && window.innerHeight) 
+	{
+		winW = window.innerWidth;
+	}
+	winW-=320;
+	//alert(winW)
+	document.getElementById("settingsandhelp").style.left=winW
+	dojquerytogglediv('settingsandhelp')
+}
+</script> 
+<table width="100%" height="35" border="0" cellpadding="0" cellspacing="0" background="./Shivraj Jain  MyDog_files/topgrey.jpg">
+	<tbody><tr width="1%" nowrap="">  
+					<script language="javascript">
+						function dochangeclinic()
+						{
+							var path="changeclinic.html"
+							dojqueryajaxcall("othercliniclist",path)
+						}
+
+						function hideclinicdiv()
+						{
+							var style2 = document.getElementById("othercliniclist").style;
+							style2.display="none";
+						}
+
+						function dochangeclinicsession(id)
+						{
+							var fullpath=window.location.pathname;
+							var onlypath=fullpath.split("/")
+							var path=onlypath[1]
+							path=doopenwindowpath(path)
+
+							path=path+"&changesesseionclinic="+id
+							document.location=path
+						}
+					</script>
+			<td align="left" valign="bottom" nowrap="" width="1%">&nbsp;
+				<font style="font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold;">VETport Animal Hospital</font>&nbsp;
+			</td>
+
+			<td align="left" valign="bottom" nowrap="" width="1%">
+				<a class="headerlinktoprow" href="https://develop.vetport.com/medrec_changedate.html" onclick="javascript:dohrefpath(this)">Fri 27 Feb 15 01:19</a>
+			&nbsp;</td>
+
+			<td align="left" nowrap="" width="1%" valign="bottom">
+			<a href="https://develop.vetport.com/medrec_history2.html?workflow=soappatient&clientid=1236&patientid=86&problemid=127#" onclick="javascript:dojqueryajaxcall(&#39;providerdiv&#39;,&#39;show_otherproblem_patient.html?calltype=showprovider&amp;targetfile=/medrec_history2.html?workflow=soappatient*clientid=1236*patientid=86*problemid=127&#39;)"><img src="./Shivraj Jain  MyDog_files/145-persondot_2x.png" height="18" border="0" style="vertical-align:bottom;"></a></td>
+			<td align="left" nowrap="" width="1%" valign="bottom">
+			<a class="headerlinktoprow" href="https://develop.vetport.com/medrec_history2.html?workflow=soappatient&clientid=1236&patientid=86&problemid=127#" onclick="javascript:dojqueryajaxcall(&#39;providerdiv&#39;,&#39;show_otherproblem_patient.html?calltype=showprovider&amp;targetfile=/medrec_history2.html?workflow=soappatient*clientid=1236*patientid=86*problemid=127&#39;)"><span id="spanproviderdiv" class="downarrow">Thomas Molloy</span></a><br><div id="providerdiv" class="tabcss" style="display: none; z-index: 2001; width: 300px;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);"></div></td>
+			<td align="left" valign="bottom" nowrap="" width="1%"><img src="./Shivraj Jain  MyDog_files/12-badge_2x.png" height="18" border="0" style="vertical-align:bottom;"></td>
+
+			<td valign="bottom" width="1%" nowrap="">
+				<a href="javascript:dojquerytogglediv('loginuser')" class="headerlinktoprow"><span id="spanloginuser" class="downarrow">John&nbsp;Do</span></a>
+								<a href="javascript:doQuit('logout.html?caller=index.html&id=57921&logouttime=1424999984');" class="headerlinktoprow">Logout</a>
+				<div id="loginuser" class="tabcss1" style="display: none; z-index: 3000;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+
+					<table border="0" bgcolor="#FEFEFA" cellpadding="0" cellspacing="0" width="300px"> 
+						<tbody><tr> 
+							<td class="secondlevelheading"><a href="https://develop.vetport.com/changepassword.html?clientid=1236&patientid=86&problemid=127">Logged in User Password Change</a></td>
+						</tr> 
+						<!--<tr>
+							<td class="secondlevelheading">
+														<A  href="javascript:doQuit('logout.html?caller=index.html&id=57921&logouttime=1424999984');">Logout</a>
+							</td>	
+						</tr>--> 
+					</tbody></table>
+				</div>
+			</td>
+			<td nowrap="" width="95%" valign="bottom" align="right">
+			<script language="javascript">
+			function loadvetporthelp()
+			{
+				var path="vetporthelp_supportmenu.html"
+				$( "#dialog:ui-dialog" ).dialog( "destroy" );
+				$( "#vetporthelp" ).dialog({
+				modal: true,
+				height: 400,
+				width: 600  
+				});
+			}
+			</script>
+			<table border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td align="right" nowrap="" width="99%" valign="bottom">
+					
+					<a href="https://develop.vetport.com/require_help.html" class="headerlinktoprow"><!--Manuals & Supports-->Help</a>&nbsp;
+					<!--<a href="#" onclick="javascript:loadvetporthelp()" class="headerlinktoprow">Help?</a>&nbsp;-->
+						<div id="vetporthelp" title="VETport Help &amp; Support" style="display:none;">
+						<table border="0" cellpadding="2" cellspacing="0">
+							<tbody><tr>
+								<td><img src="./Shivraj Jain  MyDog_files/vetporticon.gif" width="25px" border="0"></td>
+								<td><a href="http://vetport.screenstepslive.com/spaces/1805" target="new" class="headerlinktoprow">VETport Help</a>
+								<!--&nbsp;&nbsp;&nbsp;&nbsp;
+								<a href="http://vetport.screenstepslive.com/spaces/1805" target="new" class="headerlinktoprow">Submit a Ticket</a>-->
+								</td>
+							</tr>
+							<tr height="5px">
+								<td colspan="2"></td>
+							</tr>
+							<tr height="5px">
+								<td colspan="2">
+								<form name="frmhelp" action="http://vetport.screenstepslive.com/s/help_files/searches?commit=Search" method="get" target="new">
+								<input type="text" name="text" value="" class="searchbox" onfocus="javascript:dontclose()" onblur="javascript:dontclose()" style="width:180px;">
+								<input type="submit" name="cmdsearchhelp" class="btn btn-primary btn-sm" value="Go" onclick="dohelpsubmit()">
+								</form>
+								</td>
+							</tr>
+							<tr height="5px">
+								<td colspan="2"><hr></td>
+							</tr>
+							<tr>
+								<td>&nbsp;<!--<a href="javascript:dopopupfochatnew()"><img src="images/09-chat-2_2x.png" width="25px" height="25px" border="0"></a>--></td>
+								<td><a href="https://v2.zopim.com/widget/popout.html?key=27oyrNjBiebuhzMXP933aXbRduDLyGYj&lang=en-US&hostname=develop.vetport.com" class="headerlinktoprow" target="_new">VETport Live Chat</a></td>
+							</tr>
+							<tr height="5px">
+								<td colspan="2"></td>
+							</tr>
+							<tr>	
+								<td><a href="http://helpdesk.vetport.com/home" target="new"><img src="./Shivraj Jain  MyDog_files/vetporticon.gif" width="25px" border="0"></a></td>
+								<td><a href="http://helpdesk.vetport.com/home" target="new" class="headerlinktoprow">VETport Community</a></td>
+							</tr>
+						
+							
+							<!-- Vedio-->
+							<tr>
+								<td><a href="https://develop.vetport.com/vetport_help.html?type=vedio" onclick="javascript:dohrefpath(this)"><img src="./Shivraj Jain  MyDog_files/280-clapboard_2x.png" width="25px" height="25px" border="0"></a></td>
+								<td><a href="https://develop.vetport.com/vetport_help.html?type=vedio" onclick="javascript:dohrefpath(this)" class="headerlinktoprow">Video Guides</a></td>
+							</tr>
+							<tr height="5px">
+								<td colspan="2"></td>
+							</tr>
+							<!-- Teamviewer-->
+							<tr>
+								<td><a href="http://www.vetport.com/windows_teamviewer.exe" onclick="javascript:dohrefpath(this)"><img src="./Shivraj Jain  MyDog_files/tviewlogo.gif" width="25px" height="25px" border="0"></a></td>
+								<td><a href="http://www.vetport.com/windows_teamviewer.exe" onclick="javascript:dohrefpath(this)" class="headerlinktoprow">Windows Teamview QS</a></td>
+							</tr>
+							<tr height="5px">
+								<td colspan="2"></td>
+							</tr>
+							<tr>
+								<td><a href="http://www.vetport.com/mac_teamviewer.zip" onclick="javascript:dohrefpath(this)"><img src="./Shivraj Jain  MyDog_files/tviewlogo.gif" width="25px" height="25px" border="0"></a></td>
+								<td><a href="http://www.vetport.com/mac_teamviewer.zip" onclick="javascript:dohrefpath(this)" class="headerlinktoprow">Mac Teamview QS</a></td>
+							</tr>
+							<tr height="5px">
+								<td colspan="2"></td>
+							</tr>
+						</tbody></table>
+						</div>
+					</td>
+						<td align="right" valign="bottom" nowrap="" width="100%">
+						<a href="https://develop.vetport.com/medrec_history2.html?workflow=soappatient&clientid=1236&patientid=86&problemid=127#" onclick="javascript:settingsandhelpmenu()" class="headerlinktoprow"><span id="spansettingsandhelp" class="downarrow">Settings &amp; Reports</span></a>
+						</td> 
+				</tr>
+				<tr>
+					<td align="left" colspan="2"><div id="settingsandhelp" class="tabcss" style="display: none; z-index: 2001; width: 260px;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+					<table border="0" cellpadding="2" cellspacing="0">
+						<!-- Settings / Setup -->
+						<tbody><tr>
+							<td nowrap="">
+							<a href="https://develop.vetport.com/settings_menu.html" onclick="javascript:dohrefpath(this)"><img src="./Shivraj Jain  MyDog_files/20-gear-2_2x.png" width="25px" height="25px" border="0"></a>
+							</td>
+							<td nowrap="">
+							<a href="https://develop.vetport.com/settings_menu.html" onclick="javascript:dohrefpath(this)" class="headerlinktoprow">Settings</a>
+							</td>
+						</tr>
+						<tr height="5px">
+							<td colspan="2"></td>
+						</tr>
+						<!-- POMR Menu -->
+						<tr>
+							<td nowrap="">
+							<a href="https://develop.vetport.com/settings_soap_menu.html" onclick="javascript:dohrefpath(this)"><img src="./Shivraj Jain  MyDog_files/10-medical_2x.png" width="25px" height="25px" border="0"></a>
+							</td>
+							<td nowrap="">
+							<a href="https://develop.vetport.com/settings_soap_menu.html" onclick="javascript:dohrefpath(this)" class="headerlinktoprow">Medical Record / Plan Items Setup</a>
+							</td>
+						</tr>
+						<tr height="5px">
+							<td colspan="2"></td>
+						</tr>
+								<!-- Business Intelligence -->
+								<tr>
+									<td nowrap="">
+									<a href="https://develop.vetport.com/business_menu.html" onclick="javascript:dohrefpath(this)"><img src="./Shivraj Jain  MyDog_files/84-lightbulb_2x.png" width="20px" height="25px" border="0"></a>
+									</td>
+									<td nowrap="">
+									<a href="https://develop.vetport.com/business_menu.html" onclick="javascript:dohrefpath(this)" class="headerlinktoprow">Business Intelligence</a>
+									</td>
+								</tr>
+								<tr height="5px">
+									<td colspan="2"></td>
+								</tr>
+					<tr>
+						<td nowrap="">
+						<a href="https://develop.vetport.com/content_menu.html" onclick="javascript:dohrefpath(this)"><img src="./Shivraj Jain  MyDog_files/140-gradhat_2x.png" width="25px" height="30px" border="0"></a>
+						</td>
+						<td nowrap="">
+						<a href="https://develop.vetport.com/content_menu.html" onclick="javascript:dohrefpath(this)" class="headerlinktoprow">Libraries and Research</a>
+						</td>
+					</tr>
+					<tr height="5px">
+						<td colspan="2"></td>
+					</tr>
+					<!-- Medical Record / Setup -->
+					</tbody></table>
+					</div>
+					</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="5" height="5px"></td>
+	</tr>
+</tbody></table></td>
+		</tr>
+		<tr>
+			<td align="center" valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%"> 
+						<tbody><tr>
+							<td align="center" valign="top" colspan="0">
+								<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+									<tbody><tr>
+										<form name="frmsearchmenu" action="https://develop.vetport.com/search_client_patient.html" enctype="multipart/form-data" onsubmit="javascript:doactionpath(this)" method="post"></form>
+										<td align="left" valign="middle">
+											 
+<input type="hidden" name="hidsearchpage" value="/medrec_history2.html">
+
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" class="menubg">
+			<tbody><tr>
+				<td><img src="./Shivraj Jain  MyDog_files/menubarleft1.jpg" width="12px" height="34px" border="0"></td>
+				<td width="1%" nowrap="" valign="middle">
+					<input type="text" name="txtsearch" value="Search Client/Patient" onkeypress="javascript:return search_clientpatient_mainmenu(this,event)" onfocus="javascript:clearbox()" style="font-size: 12px;width:150px" class="searchBox">&nbsp;
+				</td>
+				<td width="1%" nowrap="" valign="middle"><img src="./Shivraj Jain  MyDog_files/gobutton1.png" onclick="javascript:search_clientpatient_onclick()" style="cursor:pointer;" bordercolor="red" border="0" height="26px"></td>
+				<!--<td width="1%" nowrap valign="middle">&nbsp;</td>-->
+					<td width="1%" nowrap="" valign="middle"><img src="./Shivraj Jain  MyDog_files/53-house_2x.png" onclick="javascript:workflow_nextstep(&#39;comm_whiteboard.html&#39;)" style="cursor:pointer;" bordercolor="red" border="0" height="26px"></td>
+				<!--<td width="1%" nowrap valign="middle">&nbsp;</td>-->
+				<td width="1%" nowrap="" valign="middle">
+					<!-- for beta-->
+					<a href="https://develop.vetport.com/appointment_all_for_clinic.html?clientid=1236&patientid=86&problemid=127" width="150"><img src="./Shivraj Jain  MyDog_files/83-calendar_2x.png" width="23px" height="25px" border="0" style="vertical-align: middle;"></a>
+				<a href="https://develop.vetport.com/sch_whiteboardlist.html" width="150"><img src="./Shivraj Jain  MyDog_files/patient_tracking.png" width="23px" height="25px" border="0" style="vertical-align: middle;"></a>&nbsp;
+				</td>
+				<td>
+ 
+					<table border="0" cellpadding="0" cellspacing="0">
+						<tbody><tr>
+							<td class="toplevelmenu"><a href="javascript:dojquerytogglediv('toplevelregistration')" class="toplevelmenulink"><span id="spantoplevelregistration" class="downarrow">Registration</span></a>
+							<div id="toplevelregistration" class="tabcss1" style="display: none;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+<!-- this page is used to display second level menu-->
+ 
+	<table border="0" bgcolor="#FEFEFA" cellpadding="0" cellspacing="0" width="310px"> 
+		<tbody><tr>
+<!--			<td class="secondlevellink"><a href="whiteboard_allclient.html?cmdsearchactiveplan=true&clientid=1236&patientid=86&problemid=127" class="secondlevelmenu">Whiteboard - Clinic (All)</a></td>
+-->
+			<td class="secondlevellink"><a href="https://develop.vetport.com/encounter_payout_status.html?cmdsearchactiveplan=true&clientid=1236&patientid=86&problemid=127" class="secondlevelmenu">Encounter Payout Status</a></td>
+		</tr>
+<!--				<tr> 
+					<td class="secondlevellink"><a href="whiteboard_allclient.html?cmdsearchactiveplan=true&clientid=1236&patientid=86&problemid=127&schtype=" class="secondlevelmenu">Whiteboard - </a></td>	
+				</tr>
+-->
+ 
+		<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/comm_whiteboard.html?clientid=1236&patientid=86&problemid=127" class="secondlevelmenu">Bulletin Board</a></td>	
+		</tr> 
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/vetenvoy_microchip_pendinglist.html?btnsearch=search" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">MicroChip Registration</a></td>	
+			</tr>
+			<tr> 
+				<td class="secondlevelheading">Add Client, Search &amp; Counter Sales</td>	 
+			</tr> 
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/client_add.html?clientid=1236&patientid=86&problemid=127" class="secondlevelmenu">Add	Client</a></td>	
+			</tr> 
+					<tr>
+						<td class="secondlevellink"><a href="https://develop.vetport.com/patient_add.html?clientid=1236" class="secondlevelmenu">Add Patient to Shivraj Jain</a></td>	
+					</tr> 
+			<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/addclient_patient_via_appt.html?clientid=1236&patientid=86&problemid=127&directclick=yes" class="secondlevelmenu">Add Client / Patient for an Appointment</a></td>	
+		</tr>
+		<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/search_client_patient.html?clientid=1236&patientid=86&problemid=127&directclick=yes" class="secondlevelmenu">Search Client / Patient</a></td>	
+		</tr>
+		<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/overcountersales_step1.html" class="secondlevelmenu">Sales Counter / Quotes</a></td>	
+		</tr> 
+			<tr> 
+				<td class="secondlevelheading">Client Requests</td>	 
+			</tr> 
+
+		<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/app_reqlist.html?clientid=1236&patientid=86&problemid=127" class="secondlevelmenu">Request for an Appointment</a></td>	
+		</tr>
+		<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/app_refilllist.html?clientid=1236&patientid=86&problemid=127" class="secondlevelmenulast">Request for a Refill</a></td>	
+		</tr>
+
+	</tbody></table>
+							</div>
+							</td>
+							<td class="toplevelmenu">
+							<a href="javascript:dojquerytogglediv('toplevelworklist')" class="toplevelmenulink"><span id="spantoplevelworklist" class="downarrow">Work Lists</span></a>
+								<div id="toplevelworklist" class="tabcss1" style="display: none;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+<!-- this page is used to display second level menu-->
+
+		<table border="0" bgcolor="#FEFEFA" cellpadding="0" cellspacing="0" width="225px">
+			<tbody><tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/report_caselist.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Encounters / Cases List</a></td>	
+			</tr>
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/tasklist.html?clientid=1236&patientid=86&problemid=127" class="secondlevelmenu" onclick="javascript:dohrefpath(this)">Task Manager</a></td>	
+			</tr>
+
+			<tr>
+				<td height="5px"></td>
+			</tr>
+		</tbody></table>
+			
+							</div>	
+							</td>
+
+							<td class="toplevelmenu">
+							<a href="javascript:dojquerytogglediv('toplevellab')" class="toplevelmenulink"><span id="spantoplevellab" class="downarrow">Labs &amp; Reports</span></a>
+							<div id="toplevellab" class="tabcss1" style="display: none;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+				
+<!-- this page is used to display second level menu-->
+
+
+	<table border="0" bgcolor="#FEFEFA" cellpadding="0" cellspacing="0" width="250px">
+		<tbody><tr>
+			<td class="secondlevelheading">General Queue</td><td>	
+		</td></tr>
+		<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/medrec_pendingdiagnostics.html?tabidlab=0" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Lab, Radiology &amp; Special Reports</a></td>	
+		</tr>
+		<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/medrec_pendingdiagnostics.html?tabidlab=1" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Anesthesia Reports</a></td>	
+		</tr>
+		<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/medrec_pendingdiagnostics.html?tabidlab=2" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Operative Reports</a></td>	
+		</tr>
+		<tr>
+			<td class="secondlevellink"><a href="https://develop.vetport.com/vetportimage_approvalreport.html?status=pending" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">DxSHOOT Pending images </a></td>	
+		</tr>
+			<tr>
+				<td class="secondlevelheading">Outside Reference Labs</td>	
+			</tr>
+			<tr>
+				<td><a href="https://develop.vetport.com/antech_display.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu"> Antech Lab Reports</a></td>	
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/idexx_display.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu"> IDEXX Lab Reports</a></td>	
+			</tr>
+		
+			<tr>
+				<td class="secondlevelheading">In Clinic Lab Equipments</td>	
+			</tr>
+			<tr>
+				<td><a href="https://develop.vetport.com/vetscan_display.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">ABAXIS Reports </a></td>	
+			</tr>
+			<tr>
+				<td><a href="https://develop.vetport.com/dcu_display.html?fromquip=ABAXIS" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">ABAXIS Reports (Via DCU) </a></td>	
+			</tr>
+			<tr>
+				<td><a href="https://develop.vetport.com/dcu_display.html?fromquip=IDEXX" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">IDEXX Reports (Via DCU) </a></td>	
+			</tr>
+		
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/heska_display.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Heska Reports</a></td>	
+			</tr>
+			<tr>
+				<td class="secondlevelheading">Radiographic PACS</td>	
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/heska_display.html?type=pacsFovea" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">FOVEA / VetRay Reports </a></td>	
+			</tr>
+			
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/heska_display.html?type=pacskodak" onclick="javascript:dohrefpath(this)" class="secondlevelmenulast">Kodak Reports</a></td>	
+			</tr>
+
+	</tbody></table>
+							</div>
+							</td>
+								<td class="toplevelmenu">
+								<a href="javascript:dojquerytogglediv('toplevelfinancials')" class="toplevelmenulink"><span id="spantoplevelfinancials" class="downarrow">Financials</span></a>
+								<div id="toplevelfinancials" class="tabcss1" style="display: none;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+
+<!-- this page is used to display second level menu-->
+			<table border="0" bgcolor="#FEFEFA" cellpadding="0" cellspacing="0" width="225px">
+				<tbody><tr>
+					<td class="secondlevelheading">Deposit and Reconciliation</td>	
+				</tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/deposit_reports.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Deposits</a></td>	
+				</tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/deposits_held.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Show Held Checks</a></td>	
+				</tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/performedplanlist.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">View in Cart</a></td>	
+				</tr>
+				
+				<tr>
+					<td class="secondlevelheading">Receivables / Billing</td><td>	
+				</td></tr>
+				
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/admin_positive_statement.html?cmdsearch=True&statement=possitive&chkbedcredit=true" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Statements (+ Balance)</a></td><td>	
+				</td></tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/receivable_possitivebalance.html?cmdsearch=True&statement=negative" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Statements (- Balance)</a></td><td>	
+				</td></tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/account_period_wise_balance.html?cmdsearch=True&chkbedcredit=true&selperiod=%3C%2030%20Days" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">30/60/90 Days Aging Report</a></td><td>	
+				</td></tr>
+				
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/search_invoice_by_number.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Search on Invoice number</a></td>	
+				</tr>
+			</tbody></table>
+		
+								</div>
+								</td>
+								<td class="toplevelmenu">
+								<a href="javascript:dojquerytogglediv('toplevelcompliance')" class="toplevelmenulink"><span id="spantoplevelcompliance" class="downarrow">Compliance</span></a>
+								<div id="toplevelcompliance" class="tabcss1" style="display: none;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+<!-- this page is used to display second level menu-->
+	
+		<table border="0" bgcolor="#FEFEFA" cellpadding="0" cellspacing="0" width="300px">
+			<tbody><tr>
+				<td class="secondlevelheading">Reminders &amp; Follow Up</td>	
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/reminder_querymanager.html?chkAllPatients=true&chkphone=true&searchreminder=true&txtreminderfrom=02/27/2015&txtreminderto=02/27/2015" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Telephone Reminders</a></td>	
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/reminder_querymanager.html?chkAllPatients=true&chkemail=true&searchreminder=true&txtreminderfrom=02/27/2015&txtreminderto=02/27/2015" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Email Reminders</a></td>	
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/reminder_querymanager.html?chkAllPatients=true&chkmail=true&searchreminder=true&txtreminderfrom=02/27/2015&txtreminderto=02/27/2015" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Mail Reminders</a></td>	
+			</tr>
+				 <tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/client_invalidemail_withreminders.html?cmdGo=true&selclinic=1&cmdGo=true" class="secondlevelmenu" onclick="javascript:dohrefpath(this)">Clients with Invalid Emails but with Due Reminders</a></td>
+				 </tr>
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/pat_no_rem.html?cmdGo=true&selclinic=1&cmdGo=true" class="secondlevelmenu" onclick="javascript:dohrefpath(this)">Patients without Reminders</a></td>
+			</tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/rabiestag_report_missing_update.html?cmdGo=true&selclinic=1&cmdGo=true&calledfrom=compliance&showwithrebaiestag=true" class="secondlevelmenu" onclick="javascript:dohrefpath(this)">Update Missing Rabies Tags / Mfr / Lot no / Expiry</a></td>
+				</tr>
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/flaggedmasterproblems.html?calledforencounter=true" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Encounter Follow Up</a></td>	
+			</tr>
+			
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/flaggedmasterproblems.html?calledforencounter=False" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Master Problem Follow Up</a></td>	
+			</tr>
+			
+
+		<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/more_menu.html?moremenu=compliance" onclick="javascript:dohrefpath(this)" class="secondlevelmenulast">Even More &gt;&gt;&nbsp;</a></td>	
+		</tr>
+		
+</tbody></table>								</div>
+								</td>
+
+								
+							<td class="toplevelmenu">
+								<a href="javascript:dojquerytogglediv('toplevelinventory')" class="toplevelmenulink"><span id="spantoplevelinventory" class="downarrow">Inventory</span></a>
+								<div id="toplevelinventory" class="tabcss1" style="display: none; left: 500px;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+<!-- this page is used to display second level menu-->
+			<table border="0" bgcolor="#FEFEFA" cellpadding="0" cellspacing="0" width="300px">
+				<tbody><tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/stock_metequisitionlist.html?cmdsearch=true&rdtype=less&firsttime=true&selclinic=1" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">List Plan Items to be Purchased</a></td>	
+				</tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/po_indent_list.html?selclinic=1" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Add a Need to Want List</a></td>	
+				</tr>
+				 <tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/disp_stocks_expry.html?selclinic=1" class="secondlevelmenu" onclick="javascript:dohrefpath(this)">Manufacturer Lot# Expiry Report</a></td>
+				</tr>
+			
+				<tr>
+					<td class="secondlevelheading">Ordering</td>	
+				</tr>
+				
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/show_list_for_po_creation.html?firsttime=true&chkhidependingorder=true" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Create PO</a></td>	
+				</tr>
+				<tr>
+					<td class="secondlevelheading">In-hand quantities, Threshold, Approvals</td>	
+				</tr>
+
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/admin_update_inhandqty.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Update In-Hand Quantities</a></td>	
+				</tr>
+					<tr>
+						<td class="secondlevellink"><a href="https://develop.vetport.com/st_updatesalescost.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Apply New Prices to Plan Items</a></td>	
+					</tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/stockitem_relatetobin.html?calledfrom=inventorymenu" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">List of Plan Items Assigned To A Bin</a></td><td>	
+				</td></tr>
+				<tr>
+					<td class="secondlevelheading">Receive Stock</td>	
+				</tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/stock_recdadd.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Add Stock with PO</a></td>	
+				</tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/st_withoutpo_stockadd.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Add Stock without PO</a></td>	
+				</tr>
+				<tr>
+					<td class="secondlevelheading">Shrink Stock</td>	
+				</tr>
+				<tr>
+					<td class="secondlevellink"><a href="https://develop.vetport.com/inventory_shrink_stock.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Shrink Damaged Or Missing Stock</a></td>	
+				</tr>
+				<tr>
+						<td class="secondlevellink"><a href="https://develop.vetport.com/more_menu.html?moremenu=supplychain" onclick="javascript:dohrefpath(this)" class="secondlevelmenulast">Even More &gt;&gt;&nbsp;</a></td>	
+				</tr>
+			</tbody></table>
+
+				
+								</div>
+							</td>
+							<td class="toplevelmenu">
+							<a href="javascript:dojquerytogglediv('topleveladmission')" class="toplevelmenulink"><span id="spantopleveladmission" class="downarrow">Admission</span></a>
+							<div id="topleveladmission" class="tabcss1" style="display: none; left: 586px;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+<!-- this page is used to display second level menu-->
+		<table border="0" bgcolor="#FEFEFA" cellpadding="0" cellspacing="0" width="295px">
+			<tbody><tr>
+				<td class="secondlevelheading">Admission &amp; Boarding</td><td>	
+			</td></tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/viewflaggedadmission.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Admission Queue of All Patients</a></td>	
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/pat_reserve_navi.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">All Future Reservations</a></td>	
+			</tr>
+
+			<tr>
+				<td class="secondlevelheading">Admission / Reservation Reports</td>	
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/bed_summaryreport.html" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Today's Admission / Reservation</a></td>	
+			</tr>						
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/boarding_admittedpetsearch.html?cmdsearch=admitted_patients" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Admitted Patients</a></td>	
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a onclick="javascript:dohrefpath(this)" href="https://develop.vetport.com/boarding_admittedpetsearch.html?cmdsearch=expected_discharge" class="secondlevelmenu">List of Expected Discharge Patients</a></td>
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a onclick="javascript:dohrefpath(this)" href="https://develop.vetport.com/boarding_reserve_notadmitted.html" class="secondlevelmenu">List of Patients with Reservation but not Admitted</a></td>
+			</tr>
+
+					<tr>
+					<td class="secondlevellink"><a onclick="javascript:dohrefpath(this)" href="https://develop.vetport.com/cagetype_totaloccupanyreport.html?cmdsearch=True" class="secondlevelmenu">Bed Consumption By Cage Type</a></td>
+					</tr>
+						<tr>
+							<td class="secondlevellink"><a onclick="javascript:dohrefpath(this)" href="https://develop.vetport.com/bed_block_cage_for_cleanup.html" class="secondlevelmenu">Block Cages / Beds for Cleanup</a></td>
+						</tr>
+
+
+					<tr>
+						<td class="secondlevellink"><a onclick="javascript:dohrefpath(this)" href="https://develop.vetport.com/bed_flagged_for_cleanup.html" class="secondlevelmenu">List of Cages flagged for Cleanup</a></td>
+					</tr>
+					<tr>
+						<td class="secondlevellink"><a onclick="javascript:dohrefpath(this)" href="https://develop.vetport.com/bed_get_list_of_freecage.html" class="secondlevelmenu">List of Free Cages</a></td>
+					</tr>
+
+				<tr>
+					<td class="secondlevellink"><a onclick="javascript:dohrefpath(this)" href="https://develop.vetport.com/bed_consumption_byday.html" class="secondlevelmenu">Cage Allocation Report For Next 120 Days</a></td>
+				</tr> 
+				<tr>
+					<td class="secondlevellink"><a onclick="javascript:dohrefpath(this)" href="https://develop.vetport.com/bednum_allocation_byday.html" class="secondlevelmenulast">Free / Allocated Cage Report For Next 120 Days</a></td>
+				</tr>
+
+
+		</tbody></table>
+							</div>
+							</td>
+							<td class="toplevelmenu" id="workflow">
+							<a href="javascript:dojquerytogglediv('toplevelworkflow')" class="toplevelmenulink"><span id="spantoplevelworkflow" class="downarrow">Work Flows</span></a>
+							<div id="toplevelworkflow" class="tabcss2" style="display: none; left: 640px;" onmouseover="showBoxwithtimmer(this.id);" onmouseout="hideBoxwithtimmer(this.id);">
+<!-- this page is used to display second level menu-->
+		<table border="0" bgcolor="#FEFEFA" cellpadding="0" cellspacing="0" width="335px">
+			<tbody><tr>
+				<td class="secondlevelheading">Medical Workflows</td><td>	
+			</td></tr>
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/search_client_patient.html?workflow=soappatient" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">SOAP - Add Complaints, History, Exam, Assessment, Plan</a></td>
+			</tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/search_client_patient.html?workflow=makeinvoice" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Quick Invoice / Estimate</a></td><td>	
+			</td></tr>
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/search_client_patient.html?workflow=rapidplan" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Rapid Exam &amp; Plan </a></td>
+			</tr>
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/search_client_patient.html?workflow=addvaccine" onclick="javascript:dohrefpath(this)" class="secondlevelmenulast">Add Vaccines, Invoice &amp; Print Certificates</a></td>
+			</tr>
+
+			<tr>
+				<td height="10px" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-------------------</td>
+			</tr>
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/search_client_patient.html?workflow=pastservices" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Add Past Vaccines &amp; Services</a></td>
+			</tr>
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/search_client_patient.html?workflow=addpatientmemo" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Add Patient Memo</a></td>
+			</tr>
+
+
+			<tr>
+				<td class="secondlevelheading">Accounting Workflows</td><td>	
+			</td></tr>
+
+			<tr>
+				<td class="secondlevellink"><a href="https://develop.vetport.com/search_client_patient.html?workflow=payment_refund" onclick="javascript:dohrefpath(this)" class="secondlevelmenu">Accept Payments</a></td>
+			</tr>
+
+			<tr> 
+				<td class="secondlevelheading">Multi-Patient Workflows</td>	 
+			</tr> 
+			<tr height="18px">
+				<td nowrap="" class="secondlevellink"><a href="https://develop.vetport.com/multiple_patient_plan.html?patientid=86&problemid=127" class="secondlevelmenulast" onclick="javascript:dohrefpath(this)">Add Plan Items to Multiple Patients</a></td>
+			</tr>
+		</tbody></table>
+							</div></td>
+						</tr>
+					</tbody></table>
+					<!--<div id="myslidemenu" class="jqueryslidemenu" >
+						<ul>
+							<li style="z-index:1100;"><a href="#topsection" >Registration</a>
+							</li>
+										<li style="z-index:1100;"><a href="#topsection">Work List</a>
+										</li>
+								
+							<li style="z-index:1100;"><a href="#topsection" >Labs & Reports</a>
+				
+							</li>
+								<li style="z-index:1100;"><a href="#topsection">Financials</a>
+								</li>
+								<li style="z-index:1100;"><a href="#topsection">Compliance</a>
+								</li>
+							<li style="z-index:1100;"><a href="#topsection">Inventory</a>
+				
+							</li>
+							<li style="z-index:1100;"><a href="#topsection">Admission</a>
+							</li>
+							<li style="z-index:1100;"><a href="#topsection">Work Flows</a>
+							</li>
+						</ul>
+						<br style="clear: left" />
+					</div>-->
+				</td>
+				<td nowrap="" align="right"><img src="./Shivraj Jain  MyDog_files/menubarright1.jpg" width="12px" height="34px" border="0"></td>
+			</tr>
+		</tbody></table>
+	
+										</td>
+										
+									</tr>
+									<tr>
+										<td height="5px"></td>
+									</tr>
+								</tbody></table>
+							</td> 
+						</tr>
+						<tr>
+							<td align="left" valign="top" colspan="2" id="showdashboarddata">
+								<table border="0" width="100%" valign="top" cellspacing="1" cellpadding="1" style="border: 2px solid #77A7CD;-moz-border-radius:4px;-webkit-border-radius:3px;">
+									<tbody><tr>
+										<td width="100%" valign="top"><font style="font-size:12px;" face="arial">&nbsp;Open Dashboard for: 
+<b>											<a href="https://develop.vetport.com/medrec_history2.html?workflow=soappatient&clientid=1236&patientid=86&problemid=127#" onclick="javascript:jquery_ajax_loadresult(&#39;showdashboarddata&#39;,&#39;inc_tabnavaigation.html?clientid=1236&amp;patientid=86&amp;problemid=127&amp;fromdashboardajax=true&amp;calledfromajax=true&#39;)">
+Shivraj Jain &gt; MyDog</a></b>										</font></td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>	
+				</tbody></table>
+			</td>
+		</tr>
+	</tbody></table>
+													</td>
+												</tr>
+											</tbody></table>
+										</div>
+									</td>
+								</tr>
+								<tr height="99%">
+									<td valign="top">
+										<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" valign="top" height="100%">
+											<tbody><tr>
+												<td colspan="2" valign="top" style="height:100%;" width="100%">
+												<div id="planactionpagecontent" style="height:100%;">
+ 
+<style type="text/css">
+.ui-dialog
+{
+	left:200px !important;
+	top:100px !important;
+}
+.ui-datepicker
+{
+	z-index:9999 !important;
+}
+</style>
+ 
+<form onsubmit="javascript:doactionpath(this)" name="frmobj" method="post" action="https://develop.vetport.com/medrec_history.html" enctype="multipart/form-data" autocomplete="off">
+<!--changes made by satya on 26-dec-14 desc:To display sidebar of all problem list block-->
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" style="padding-left:7px;">
+
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+				<td valign="top" style="padding-top:10px;">
+						<a href="https://develop.vetport.com/reminderhistory.html" onclick="javascript:dohrefpath(this)">
+								Certificates&nbsp;-&nbsp;Boarding, Rabies etc
+						</a>
+				</td>
+			</tr>
+                </tbody></table>
+		  <table border="0" width="100%" cellpadding="5" cellspacing="0" class="leftmenubg" style="padding:5px; margin-top:10px;">
+			<tbody><tr>
+				<td colspan="3" height="34" style="padding-top:2px" nowrap=""><h5 class="toplevelmenulink" style="margin:0px;">Problem List</h5></td>
+			</tr>
+			<!--<tr><td style = "padding-top : 0px; padding-bottom : 0px" colspan = "5"><hr></td></tr>-->
+		
+		</tbody></table>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody><tr valign="top">
+					<td width="100%" class="planbrown">	<table border="0" width="100%" cellpadding="5" cellspacing="0" class="leftmenubg" style=" border-radius:10px; padding:5px; margin-top:10px;">	
+		<tbody><tr>
+			<td valign="middle" height="34">
+				<h5 style="margin:0px;" class="toplevelmenulink">Recommended Services</h5>
+			</td><td>
+		</td></tr>
+		<!--<tr><td style = "padding-top : 0px; padding-bottom : 0px" colspan = "5"><hr></td></tr>-->
+		<tr>
+			<td valign="top">
+				<font style="FONT-FAMILY: Arial, Helvetica, Sans-serif" color="#FF0000">No Recommended Services</font>
+ 			</td>
+		</tr>
+        </tbody></table>
+        
+        <table border="0" width="100%" cellpadding="5" cellspacing="0" class="leftmenubg" style="border-radius:10px; padding:5px; margin-top:10px;">
+		<tbody><tr>
+			<td valign="middle" height="34">
+				<h5 class="toplevelmenulink" style="margin:0px;">Reminders</h5>
+			</td><td>
+		</td></tr>
+		<!--<tr><td style = "padding-top : 0px; padding-bottom : 0px" colspan = "5"><hr></td></tr>-->
+		<tr>
+			<td valign="top" style="padding-top:10px;">
+				<h6 class="headingh6">Due in next 45 days</h6>
+			<font style="FONT-FAMILY: Arial, Helvetica, Sans-serif" color="#0A2566">No Reminders Due in next 45 days</font>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="padding-top:10px;">
+				<h6 class="headingh6">Current</h6>
+			<font style="FONT-FAMILY: Arial, Helvetica, Sans-serif" color="#0A2566">No Current Reminders</font>
+			</td>
+		</tr>
+		<tr> 
+			<td valign="top" style="padding-top:10px;">
+				<h6 class="headingh6">Over Due</h6>
+				<font style="FONT-FAMILY: Arial, Helvetica, Sans-serif" color="#ff0000">No Over Due Reminders</font>
+			</td>
+		</tr>
+		<tr>
+			<td valign="top" style="padding-top:10px;">
+				<h6 class="headingh6">Expired</h6>
+				<font style="FONT-FAMILY: Arial, Helvetica, Sans-serif" color="#880000">No Expired Reminders</font>
+			</td>
+		</tr>
+	</tbody></table>
+</td>
+				</tr>
+
+ 
+		</tbody></table> 
+      
+		<!--------------------------------> 
+		
+		<!-- Appointments for Patient-->
+		<!-------------------------------->
+		<table border="0" cellpadding="5" cellspacing="0" width="100%" class="leftmenubg" style=" border-radius:10px; padding:5px; margin-top:10px;">
+			<tbody><tr>
+				<td valign="middle" height="34">
+					<!--<h5 class="headingh5">Today's & Future Appointments</h5>-->
+                    <h5 class="toplevelmenulink" style="margin:0px;">Appointments</h5>
+				</td>
+			</tr>
+			<!--<tr><td style = "padding-top : 0px; padding-bottom : 0px" colspan = "5"><hr></td></tr>-->
+			<tr>
+				<td>
+				</td>
+			</tr>
+		</tbody></table>
+		<!-------------------------------->
+	</div>
+	<div class="col-sm-9 " style="padding-left:7px;">
+        <!--changes made by satya end-->
+<!-- changes made by satya on 30-dec-14 -->
+<table border="0" width="100%" valign="top" cellspacing="0" cellpadding="2" class="workflownavigationbar">
+<!--changes made by satya -->
+<tbody><tr>
+		<td width="1%" align="left" nowrap="">
+			<!-- Select client /patient -->
+			<a href="https://develop.vetport.com/medrec_allproblem.html?condition=full&allmp=true&cmdshowmergedemr=true&showleftmpmenu=true&problemid=127" target="_new">Past History</a>
+		</td>
+					<td align="left" nowrap="" width="99%">&nbsp;
+						 <img src="./Shivraj Jain  MyDog_files/button_back.gif" onclick="javascript:workflow_nextstep(&#39;medrec_subjective.html?workflow=soappatient&#39;)">
+						<img src="./Shivraj Jain  MyDog_files/button_vertical_pipe.gif">
+						 <img src="./Shivraj Jain  MyDog_files/button_skip.gif" onclick="javascript:workflow_nextstep(&#39;medrec_objective.html?workflow=soappatient&#39;)">
+					</td>
+		</tr>
+	</tbody></table>
+<!--changes made by satya on 26/dec/14-->
+<!--changes made by satya end-->
+<!--changes made by satya on 30/dec/14-->
+  <table border="0" cellspacing="1" width="100%" style="border:2px #E5E2B5;">
+    <tbody><tr><td>
+    <span id="sphisquestion" style="display:none">
+	<textarea name="txthisquestion">How is your pet's appetite?^What does your pet eat?^Has your pet's weight changed?^How is your pet's drinking?^What is your pet's activity level?^Has there been any vomiting or diarrhea?^Is your pet itching or scratching?^Is your pet limping?^Where does your pet live?^How long have you known this pet?^Has your pet been exposed to any toxins or poisons? ^Do you travel with your pet?^Are you happy with your dog's behavior?^Is your dog on heartworm prevention?^Is your pet on flea control?^Is your pet on any medications and what dosages?</textarea>
+</span><table width="100%" border="0">
+<!--changes made by satya end-->
+<tbody><tr>
+	<td width="100%" colspan="3" height="5px" nowrap=""></td>
+</tr>
+<input type="hidden" name="hidajaxpostingdone" value="">
+<input type="hidden" name="EditSubjective" value="">
+<input type="hidden" name="formFlag" value="1">
+<input type="hidden" name="hidList" value="">
+<input type="hidden" name="hidindicatornames" value="">   
+<input type="hidden" name="workflow" value="soappatient">
+<tr height="30px">
+	<td width="100%" class="infoheading" colspan="3" height="18" nowrap="">History Form &nbsp;
+	<select name="listForm" onchange="histdoSubmit(this)">
+<option selected="" value="7">Dermatology</option><option selected="" value="1">General History</option><option value="15">Medical Record Review</option>	</select> 
+	&nbsp;&nbsp;<input class="btn btn-primary btn-sm" type="button" name="cmdSave" value="Save" onclick="histdoSubmit(this)">
+	</td>
+</tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow1">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>How is your pet's appetite?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C0" value="Direct">
+			<select name="listcomment0" onchange="histCopyText(this,0,8,05)">
+			<option value="-99"> --Choose One--</option>
+				<option value="119">Decreased Appetite</option>
+				<option value="118">Increased Appetite</option>
+				<option value="3">Normal Appetite</option>
+				<option value="117">Normal/ No Change</option>
+				<option value="120">Not Eating</option>
+				<option value="7">Voracious Appetite</option>
+			</select>
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow1">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment0"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,0)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment0" id="txtcomment0" onblur="javascript:histcheckradio(this,0)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;">Hello this is test 123</textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow2">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>What does your pet eat?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C1" value="Direct">
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow2">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment1"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,1)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment1" id="txtcomment1" onblur="javascript:histcheckradio(this,1)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"> This is another text box please type in</textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow1">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Has your pet's weight changed?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C2" value="Direct">
+			<select name="listcomment2" onchange="histCopyText(this,2,63,05)">
+			<option value="-99"> --Choose One--</option>
+				<option value="129">Decreased Weight</option>
+				<option value="128">Increased Weight</option>
+				<option value="127">Weight the Same</option>
+			</select>
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow1">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment2"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,2)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment2" id="txtcomment2" onblur="javascript:histcheckradio(this,2)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"> Hesitate sweet scenes Yes we can Yes Can you hear me Hello this is test This is very slow</textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow2">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>How is your pet's drinking?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C3" value="Direct">
+			<select name="listcomment3" onchange="histCopyText(this,3,61,05)">
+			<option value="-99"> --Choose One--</option>
+				<option value="123">Decreased Drinking</option>
+				<option value="122">Increased Drinking</option>
+				<option value="121">Normal Drinking</option>
+			</select>
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow2">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment3"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,3)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment3" id="txtcomment3" onblur="javascript:histcheckradio(this,3)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"> Can you hear me</textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow1">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>What is your pet's activity level?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C4" value="Direct">
+			<select name="listcomment4" onchange="histCopyText(this,4,62,05)">
+			<option value="-99"> --Choose One--</option>
+				<option value="125">Decreased Activity</option>
+				<option value="126">Increased Activity</option>
+				<option value="124">Normal Activity Level</option>
+			</select>
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow1">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment4"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,4)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment4" id="txtcomment4" onblur="javascript:histcheckradio(this,4)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"> Free to text Google api Test 123 Test 123 Test 123 testing 123 testing 123</textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow2">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Has there been any vomiting or diarrhea?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C5" value="Direct">
+			<select name="listcomment5" onchange="histCopyText(this,5,65,05)">
+			<option value="-99"> --Choose One--</option>
+				<option value="180">Bloody Diarrhea</option>
+			</select>
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow2">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment5"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,5)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment5" id="txtcomment5" onblur="javascript:histcheckradio(this,5)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"> Why don't you recognise nikhil voice Hello Why don't you recognise my voice</textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow1">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Is your pet itching or scratching?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C6" value="Direct">
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow1">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment6"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,6)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment6" id="txtcomment6" onblur="javascript:histcheckradio(this,6)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"> Can you hear me now</textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow2">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Is your pet limping?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C7" value="Direct">
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow2">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment7"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,7)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment7" id="txtcomment7" onblur="javascript:histcheckradio(this,7)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"></textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow1">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Where does your pet live?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C8" value="Direct">
+			<select name="listcomment8" onchange="histCopyText(this,8,68,05)">
+			<option value="-99"> --Choose One--</option>
+				<option value="139">Inside</option>
+				<option value="140">Outside</option>
+			</select>
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow1">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment8"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,8)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment8" id="txtcomment8" onblur="javascript:histcheckradio(this,8)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"></textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow2">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>How long have you known this pet?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C9" value="Direct">
+			<select name="listcomment9" onchange="histCopyText(this,9,67,05)">
+			<option value="-99"> --Choose One--</option>
+				<option value="138">Greater than 1 year</option>
+				<option value="134">New Pet</option>
+				<option value="135">One Month or Less</option>
+				<option value="137">One year</option>
+				<option value="136">Six Months or Less</option>
+			</select>
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow2">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment9"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,9)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment9" id="txtcomment9" onblur="javascript:histcheckradio(this,9)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"></textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow1">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Has your pet been exposed to any toxins or poisons? </b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C10" value="Direct">
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow1">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment10"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,10)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment10" id="txtcomment10" onblur="javascript:histcheckradio(this,10)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"></textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow2">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Do you travel with your pet?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C11" value="Direct">
+			<select name="listcomment11" onchange="histCopyText(this,11,66,05)">
+			<option value="-99"> --Choose One--</option>
+				<option value="133">Europe</option>
+				<option value="131">New England</option>
+				<option value="130">Southern States</option>
+				<option value="132">Southwest</option>
+			</select>
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow2">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment11"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,11)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment11" id="txtcomment11" onblur="javascript:histcheckradio(this,11)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"></textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow1">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Are you happy with your dog's behavior?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C12" value="Direct">
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow1">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment12"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,12)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment12" id="txtcomment12" onblur="javascript:histcheckradio(this,12)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"></textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow2">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Is your dog on heartworm prevention?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C13" value="Direct">
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow2">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment13"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,13)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment13" id="txtcomment13" onblur="javascript:histcheckradio(this,13)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"></textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow1">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Is your pet on flea control?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C14" value="Direct">
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow1">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment14"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,14)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment14" id="txtcomment14" onblur="javascript:histcheckradio(this,14)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"></textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+    <!--changes made by satya on 30-dec-14 -->
+	<tr height="5px"><td colspan="3"></td></tr>
+      <tr class="alternateRow2">
+        <!--changes made by satya on 30-dec-14-->
+		<td height="15" width="0%" nowrap=""> <b>Is your pet on any medications and what dosages?</b></td>
+        <!--changes made by satya end-->
+		<td nowrap="" width="5%">
+		</td>
+        <!--changes made by satya on 30-dec-14-->
+		<td nowrap="" width="40%">
+        <!--changes made by satya end-->   
+		<input type="hidden" name="C15" value="Direct">
+		</td>
+	</tr>
+	<tr height="5px"><td colspan="3"></td></tr>
+	<tr class="alternateRow2">
+		<td colspan="3" nowrap="" valign="top"> 
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td width="1%" valign="top" nowrap="">Comment&nbsp;</td>
+				<td width="99%">
+				<!--<input NAME="txtcomment15"  type="text" value="" size="95" onblur="javascript:histcheckradio(this,15)" onkeyPress="return dovalidatesymbolmain(this,event)">-->
+				<textarea name="txtcomment15" id="txtcomment15" onblur="javascript:histcheckradio(this,15)" onkeypress="return dovalidatesymbolmain(this,event)" cols="100" rows="3" onfocus="document.getElementById(&#39;sel&#39;).value=this.id;"></textarea></td>
+			</tr>
+		</tbody></table>
+		</td>
+	</tr>
+	<tr><td colspan="3"><hr></td></tr>
+
+<tr height="30px">
+	<td width="100%" class="infoheading" colspan="3" height="18" nowrap="" align="center">
+	<input class="btn btn-primary btn-sm" type="button" name="cmdSave1" value="Save" onclick="histdoSubmit(this)">
+	</td>
+</tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+<!--changes made by satya on 23-dec-14-->
+</div>
+<!--changes end by satya-->       
+
+  <input type="hidden" id="sel" value="txtcomment6">
+    </form>
+
+<script src="./Shivraj Jain  MyDog_files/jquery-1.11.2.js"></script>
+<script>
+$(document).ready(function(){
+$('div#script').load("script.html");
+});
+</script>
+<style>
+  * {
+    font-family: Verdana, Arial, sans-serif;
+  }
+  a:link {
+    color:#000;
+    text-decoration: none;
+  }
+  a:visited {
+    color:#000;
+  }
+  a:hover {
+    color:#33F;
+  }
+  .button {
+    background: -webkit-linear-gradient(top,#008dfd 0,#0370ea 100%);
+    border: 1px solid #076bd2;
+    border-radius: 3px;
+    color: #fff;
+    display: none;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.3;
+    padding: 8px 25px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #076bd2;
+    letter-spacing: normal;
+  }
+  .center {
+    padding: 10px;
+    text-align: center;
+  }
+  .final {
+    color: black;
+    padding-right: 3px; 
+  }
+  .interim {
+    color: gray;
+  }
+  .info {
+    font-size: 14px;
+    text-align: center;
+    color: #777;
+    display: none;
+  }
+  .right {
+    float: right;
+  }
+  .sidebyside {
+    display: inline-block;
+    width: 45%;
+    min-height: 40px;
+    text-align: left;
+    vertical-align: top;
+  }
+  #headline {
+    font-size: 40px;
+    font-weight: 300;
+  }
+  #info {
+    font-size: 20px;
+    text-align: center;
+    color: #777;
+    visibility: hidden;
+  }
+  #results {
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    min-height: 150px;
+  }
+  #start_button {
+    border: 0;
+    background-color:transparent;
+    padding: 0;
+  }
+</style>
+<h1 class="center" id="headline">&nbsp;</h1>
+<div id="info" style="visibility: visible;">
+  <p id="info_start" style="display: inline;">Click on the microphone icon and begin speaking.</p>
+  <p id="info_speak_now" style="display: none;">Speak now.</p>
+  <p id="info_no_speech" style="display: none;">No speech was detected. You may need to adjust your
+    <a href="https://support.google.com/chrome/bin/answer.py?hl=en&answer=1407892">
+      microphone settings</a>.</p>
+  <p id="info_no_microphone" style="display: none;">
+    No microphone was found. Ensure that a microphone is installed and that
+    <a href="https://support.google.com/chrome/bin/answer.py?hl=en&answer=1407892">
+    microphone settings</a> are configured correctly.</p>
+  <p id="info_allow" style="display: none;">Click the "Allow" button above to enable your microphone.</p>
+  <p id="info_denied" style="display: none;">Permission to use microphone was denied.</p>
+  <p id="info_blocked" style="display: none;">Permission to use microphone is blocked. To change,
+    go to chrome://settings/contentExceptions#media-stream</p>
+  <p id="info_upgrade" style="display: none;">Web Speech API is not supported by this browser.
+     Upgrade to <a href="https://www.google.com/chrome">Chrome</a>
+     version 25 or later.</p>
+</div>
+                                        <div class="right" style="position:fixed; left:95%; top:40%; border:#CCC 1px solid; border-radius:5px; background:#EFE;">
+  <button id="start_button" onclick="startButton(event)" style="display: inline-block;">
+    <img id="start_img" src="./Shivraj Jain  MyDog_files/mic.gif" alt="Start"></button>
+</div>
+                                        <div id="results" style="display:none;">
+                                        <textarea id="final_span" style="display:none;"></textarea>
+ 
+ <script>
+ 
+ function publishText()
+ {
+ 	var id = document.getElementById('sel').value;
+	//alert(id);
+	document.getElementById(id).innerHTML +=document.getElementById('final_span').innerHTML;
+	document.getElementById('final_span').innerHTML='';
+	
+	$('div#script').load("script.html");
+ }
+ </script>
+  <p>
+</p></div>
+<div class="center">
+  <div class="sidebyside" style="text-align:right">
+    <button id="copy_button" class="button" onclick="copyButton()">
+      Copy and Paste</button>
+    <div id="copy_info" class="info">
+      Press Control-C to copy text.<br>(Command-C on Mac.)
+    </div>
+  </div>
+  <div class="sidebyside">
+    <button id="email_button" class="button" onclick="emailButton()">
+      Create Email</button>
+    <div id="email_info" class="info">
+      Text sent to default email application.<br>
+      (See chrome://settings/handlers to change.)
+    </div>
+  </div>
+  <p>
+  </p><div id="div_language">
+    <select id="select_language" onchange="updateCountry()"><option value="0">Afrikaans</option><option value="1">Bahasa Indonesia</option><option value="2">Bahasa Melayu</option><option value="3">Catal�</option><option value="4">Ce�tina</option><option value="5">Deutsch</option><option value="6">English</option><option value="7">Espa�ol</option><option value="8">Euskara</option><option value="9">Fran�ais</option><option value="10">Galego</option><option value="11">Hrvatski</option><option value="12">IsiZulu</option><option value="13">�slenska</option><option value="14">Italiano</option><option value="15">Magyar</option><option value="16">Nederlands</option><option value="17">Norsk bokm�l</option><option value="18">Polski</option><option value="19">Portugu�s</option><option value="20">Rom�na</option><option value="21">Slovencina</option><option value="22">Suomi</option><option value="23">Svenska</option><option value="24">T�rk�e</option><option value="25">?????????</option><option value="26">P??????</option><option value="27">??????</option><option value="28">???</option><option value="29">??</option><option value="30">???</option><option value="31">Lingua latina</option></select>
+    &nbsp;&nbsp;
+    <select id="select_dialect" style="visibility: visible;"><option value="en-AU">Australia</option><option value="en-CA">Canada</option><option value="en-IN">India</option><option value="en-NZ">New Zealand</option><option value="en-ZA">South Africa</option><option value="en-GB">United Kingdom</option><option value="en-US">United States</option></select>
+  </div>
+</div>
+
+<div id="script"></div>
+<!-- end tag of planactionpagecontent div --></div> <!--Modified By : Shailesh Shinde. On : 24/11/2014. Description : To Modify Client Note.-->
+<div class="modal fade" id="myModal-clientnote" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Update Client Note</h4>
+      </div>
+      <form role="form" method="post">
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="clientnote-text" class="control-label">Client Note : </label>
+                            <textarea class="form-control" id="clientnote-text" name="clientnote-text" style="resize : none"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" id="btn-submit-clientnote" class="btn btn-primary" value="Save changes">
+        </div>
+	  </form>
+    </div>
+  </div>
+</div>
+<!--####-->
+
+<!--Modified By : Shailesh Shinde. On : 24/11/2014. Description : To Modify Client Alert.-->
+<div class="modal fade" id="myModal-clientalert" tabindex="-1" role="dialog" aria-labelledby="clientalertModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="clientalertModalLabel">Update Client Alert</h4>
+      </div>
+      <form role="form" method="post">
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="clientalert-text" class="control-label">Client Alert : </label>
+                            <textarea class="form-control" id="clientalert-text" name="clientalert-text" style="resize : none"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" id="btn-submit-clientalert" class="btn btn-primary" value="Save changes">
+        </div>
+	  </form>
+    </div>
+  </div>
+</div>
+<!--####-->
+
+<!--Modified By : Shailesh Shinde. On : 4/12/2014. Description : To Modify Patient Note.-->
+<div class="modal fade" id="myModal-patientnote" tabindex="-1" role="dialog" aria-labelledby="patientnoteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="patientnoteModalLabel">Update Patient Note</h4>
+      </div>
+      <form role="form" method="post">
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="patientnote-text" class="control-label">Patient Note : </label>
+                            <textarea class="form-control" id="patientnote-text" name="patientnote-text" style="resize : none"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" id="btn-submit-patientnote" class="btn btn-primary" value="Save changes">
+        </div>
+	  </form>
+    </div>
+  </div>
+</div>
+<!--####-->
+
+<!--Modified By : Shailesh Shinde. On : 25/11/2014. Description : To Modify Patient Alert.-->
+<div class="modal fade" id="patientModal-alert" tabindex="-1" role="dialog" aria-labelledby="alertModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="alertModalLabel">Update Patient Alert</h4>
+      </div>
+      <form role="form" method="post">
+        <div class="modal-body">
+            <div class="form-group">
+              <label for="alert-text" class="control-label">Patient Alert : </label>
+              <textarea class="form-control" id="alert-text" name="alert-text" style="resize : none"></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" id="btn-submit-alert" class="btn btn-primary" value="Save changes">
+                    </div>
+	  </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$('document').ready(function(){
+  $('#btn-submit-clientnote').click(function(){
+    var note = document.getElementById('clientnote-text').value
+    if (note == "")
+    {
+      alert("Please enter note.");
+      return false;
+    }
+    else
+    {
+      alert("Client note updated successfully.")
+      return true;
+    }
+  });
+  $('#myModal-clientnote').live('show.bs.modal', function (event){
+    //document.getElementById('message-text').value = "";
+    //var button = $(event.relatedTarget);
+    //var recordno = button.data('recordno');
+    //var modal = $(this);
+    //modal.find('.modal-body textarea').val(recordno);
+  });
+  $('#btn-submit-clientalert').click(function(){
+    var note = document.getElementById('clientnote-text').value
+    if (note == "")
+    {
+      alert("Please enter alert.");
+      return false;
+    }
+    else
+    {
+      alert("Client alert updated successfully.")
+      return true;
+    }
+  });
+  $('#myModal-clientalert').live('show.bs.modal', function (event){
+	//document.getElementById('message-text').value = "";
+    //var button = $(event.relatedTarget);
+    //var recordno = button.data('recordno');
+    //var modal = $(this);
+    //modal.find('.modal-body textarea').val(recordno);
+  });
+  $('#btn-submit-alert').click(function(){
+    var p_alert = document.getElementById('alert-text').value
+    if (p_alert == "")
+    {
+      alert("Please enter alert.");
+      return false;
+    }
+    else
+    {
+      alert("Patient alert updated successfully.");
+      return true;
+    }
+  });
+  $('#patientModal-alert').live('show.bs.modal', function (event){
+    //document.getElementById('alert-text').value = "";
+    //var button = $(event.relatedTarget);
+    //var recordno = button.data('recordno');
+    //var modal = $(this);
+    //modal.find('.modal-body textarea').val(recordno);
+  });
+  $('#btn-submit-patientnote').click(function(){
+    var p_alert = document.getElementById('patientnote-text').value
+    if (p_alert == "")
+    {
+      alert("Please enter note.");
+      return false;
+    }
+    else
+    {
+      alert("Patient note updated successfully.");
+      return true;
+    }
+  });
+  $('#myModal-patientnote').live('show.bs.modal', function (event){
+    //document.getElementById('alert-text').value = "";
+    //var button = $(event.relatedTarget);
+    //var recordno = button.data('recordno');
+    //var modal = $(this);
+    //modal.find('.modal-body textarea').val(recordno);
+  });
+});
+</script>
+<!--####-->
+<input type="hidden" name="hidservercurrentdate" value="02/27/2015">
+<script language="javascript">
+function footer_dofocusonload(ctrlname)
+{ 
+	var e = document.getElementsByName(ctrlname)
+	if (e[0])
+	{
+		e[0].focus();
+	}
+} 
+</script>
+<!-- start of new code --> 
+<script language="javascript">
+function docloserxdiv()
+{
+	document.getElementById('editplandivforrx').style.display='none'
+
+	dojqueryajaxcall("mpprrescription","medrec_allrx.html?clientid=1236&patientid=86&problemid=127&showindiv=true&calledfromajax=true&showinrefillindiv=true&all=true")
+}
+</script>
+
+				<script language="javascript">
+					var spbal=document.getElementById("claccount")
+					if (spbal)
+					{
+						spbal.innerHTML="<a href='javascript:doclientacc(1236)'><span id='spanclaccount' class='downarrow'>Accounting <font color='#000000'>0.00</font></span></a>"
+					}
+				
+				</script>
+		<script language="javascript">
+			var spbal=document.getElementById("clientextraaccdetails")
+			if (spbal)
+			{
+				spbal.innerHTML="&nbsp;&nbsp;<a href='client_allestimate.html' onclick='javascript:dohrefpath(this)'rel='tooltip' width='150' title='View Estimate'><img src='images/calcicu.png' height='18px' style='cursor:pointer;' border='0'></a>"
+			}
+		</script>
+		<div id="impmsg" style="position:absolute; left:200px; top:50px;display:none; border: 5px solid red; background-color:#ffffff; width: 600px; height: 200px; padding: 2px;z-index:5">
+		<iframe src="" name="immmsgiframe" width="100%" height="100%" scrolling="auto" frameborder="0">
+		</iframe>
+		</div>
+		<script language="javascript">
+		function showimpmsg()
+		{
+			var path="show_userspecificmsg.html"
+
+			window.frames["immmsgiframe"].location=path
+
+			var scrolledX, scrolledY;
+			if( self.pageYoffset )
+			{
+				scrolledX = self.pageXoffset;
+				scrolledY = self.pageYoffset;
+			}
+			else if( document.documentElement && document.documentElement.scrollTop )
+			{
+				scrolledX = document.documentElement.scrollLeft;
+				scrolledY = document.documentElement.scrollTop;
+			}
+			else if( document.body )
+			{
+				scrolledX = document.body.scrollLeft;
+				scrolledY = document.body.scrollTop;
+			}
+
+ 
+			var leftoffset = scrolledX + 200;
+			var topoffset = scrolledY + 100;
+			// The initial width and height of the div can be set in the
+			// style sheet with display:none; divid is passed as an argument to // the function
+			var o=document.getElementById("impmsg");
+			var r=o.style;
+			r.position='absolute';
+			r.top = topoffset + 'px';
+			r.left = leftoffset + 'px';
+			r.display = "block";
+		}
+
+		//*************
+		function checkimgmessage()
+		{
+			var impmsgxmlHttp;
+			try
+			{
+				// Firefox, Opera 8.0+, Safari
+				impmsgxmlHttp=new XMLHttpRequest();
+			}
+			catch (e)
+			{
+				// Internet Explorer
+				try
+				{
+					impmsgxmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch (e)
+				{
+					try
+					{
+						impmsgxmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+					}
+					catch (e)
+					{
+						alert("Your browser does not support AJAX!");
+						return false;
+					}
+				}
+			}
+			impmsgxmlHttp.onreadystatechange=function()
+			{
+				if(impmsgxmlHttp.readyState==4)
+				{
+					if (impmsgxmlHttp.responseText=="YES")
+					{
+						//showimpmsg()
+					}
+					//setTimeout("checkimgmessage()",15000);
+				}
+			}
+
+			var path="show_userspecificmsg.html?isrecfound=yesorno"
+			impmsgxmlHttp.open("GET",path,true);
+			impmsgxmlHttp.send(null);
+		}
+		</script>
+			<script language="javascript">
+				setTimeout("checkimgmessage()",15000);
+			</script> 
+<script language="javascript">
+	var ehid=document.getElementById("divmenupad")
+	if (ehid)
+	{
+		ehid.style.display = ""
+	}
+</script>
+	</td>
+	</tr>
+	</tbody></table>
+	</td>
+	</tr>
+	</tbody></table>
+	</td>
+		<td valign="top" width="1%"><img src="./Shivraj Jain  MyDog_files/secondtd.jpg" border="0" width="10px"></td>
+	</tr>
+	<!-- commented for app-->
+		<tr>
+		<td align="right" valign="bottom" colspan="3" height="5px;"></td>
+	</tr>
+	
+	</tbody></table>
+	</td>
+	<td valign="top" width="1%" style="background-color:#333333;"><img src="./Shivraj Jain  MyDog_files/firsttd.jpg" border="0" width="10px"></td>
+	</tr>
+	<!-- commented for app-->
+		<tr>
+		<td height="28px" align="right" valign="bottom" colspan="4" style="background-color:#333333;">
+			<a href="http://www.vetport.com/" target="_new" class="vetportlink hideonprint">Powered By&nbsp;<img src="./Shivraj Jain  MyDog_files/vetport_footer_logo.png" border="0" width="90px" style="vertical-align: middle;"></a>
+	
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+	</tr>
+	
+	</tbody></table>
+
+</body></html>

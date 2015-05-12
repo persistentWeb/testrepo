@@ -1,0 +1,118 @@
+/***************Class for top level  menu**************/
+td.toplevelmenu
+{
+	font-family: trebuchet ms, arial, verdana, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:14px; 
+	z-index:100;
+	color: #ffffff;
+	/*background: #86ACD1;*/ /*background of tabs (default state)*/
+	/*	background-image:url(menubg.jpg); background-position: top; background-repeat:repeat-x;*/
+	padding: 5px 0px 5px 0px;
+	white-space:nowrap;
+	-moz-border-radius:2;
+	-webkit-border-radius:3px;
+	
+}
+td.toplevelmenu:hover
+{
+	font-family: trebuchet ms, arial, verdana, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:14px; 
+	z-index:100; 
+	color: #ffffff;
+	background-color:#336699;
+	/*background: #86ACD1;*/ /*background of tabs (default state)*/
+	/*	background-image:url(menubg.jpg); background-position: top; background-repeat:repeat-x;*/
+	padding: 5px 0px 5px 0px;
+	white-space:nowrap;
+	-moz-border-radius:2;
+	-webkit-border-radius:3px;
+	
+}
+
+A.toplevelmenulink:link,A.toplevelmenulink:visited
+{
+	font-family: trebuchet ms, arial, verdana, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:14px; 
+	cursor:pointer;
+	color:#ffffff;
+	display: block;
+	outline: none;
+	padding-left:0px;
+
+}
+A.toplevelmenulink:hover
+{
+	font-family: trebuchet ms, arial, verdana, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:14px; 
+	Text-decoration:none;
+	padding-left:0px;
+	cursor:pointer;
+	color:#ffffff;
+	background-color:#336699;
+	display: block;
+	outline: none;
+}
+
+
+a.secondlevelmenu:link,a.secondlevelmenu:visited, a.secondlevelmenulast:link,a.secondlevelmenulast:visited  
+{
+	border-width:0px;
+	text-decoration:none;
+	/*color:#3880B3;*/
+	color:#09538A;
+	font-family: trebuchet ms, arial, verdana, Helvetica, sans-serif;
+	font-size:14px;
+	/*border:1px #ff0000 solid;*/
+	padding:8px 0px 8px 18px;
+	font-weight:bold;
+	display: block;
+	outline: none;
+
+}
+a.secondlevelmenu:hover, a.secondlevelmenulast:hover
+{
+	font-family: trebuchet ms, arial, verdana, Helvetica, sans-serif;
+	font-size:14px;
+	border-width:0px;
+	color:#ffffff;
+	padding:8px 0px 8px 18px;
+	font-weight:bold;
+	background-color:#336699;
+}
+
+a.secondlevelmenu:link,a.secondlevelmenu:visited
+{
+	border-bottom:1px dotted #336699;
+}
+td.secondlevellink
+{
+	height:35px;
+}
+td.secondlevellink:hover
+{
+	height:35px;
+	background-color:#336699;
+}
+
+td.secondlevelheading
+{
+	color:#000000;
+	font-family: trebuchet ms, arial, verdana, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	padding:0px 0px 0px 6px;
+	height:25px;
+}
+td.secondlevelmenunolink
+{
+	font-family: trebuchet ms, arial, verdana, Helvetica, sans-serif;
+	font-size:14px;
+	color:#666666;
+	padding:0px 0px 0px 12px;
+	height:35px;
+}
+/***************Class for top level  menu**************/

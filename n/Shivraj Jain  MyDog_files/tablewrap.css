@@ -1,0 +1,16 @@
+@media only screen and (max-width: 767px) {
+	.wraptable td, .MenuTitle, .Menusmalltext, .Menulargetext {
+		display:block;
+		text-align:left;
+		/*white-space: nowrap;*/
+		width:100%
+	}
+	textarea, select
+	{
+		width:200px;
+	}
+	input[type="text"],.searchbox
+	{
+		width:200px;
+	}
+}
